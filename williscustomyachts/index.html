@@ -16,6 +16,38 @@
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+<div id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-h" style="position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#101112;color:#fbfbfa;padding:24px;">
+  <div style="max-width:420px;width:100%;">
+    <p style="font-family:var(--font-mono,monospace);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.7;margin:0 0 14px;">Christ Power &amp; Light + Energy Plus</p>
+    <h1 id="gate-h" style="font-size:1.6rem;line-height:1.25;margin:0 0 10px;">Prepared for Willis Custom Yachts.</h1>
+    <p style="opacity:0.8;margin:0 0 22px;">This page is private. Enter the password from your email to continue.</p>
+    <form id="gate-form" style="display:flex;gap:10px;flex-wrap:wrap;">
+      <label for="gate-pw" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Password</label>
+      <input id="gate-pw" type="password" autocomplete="off" placeholder="Password" style="flex:1;min-width:180px;padding:12px 14px;font-size:1rem;background:#1b1d1f;color:#fbfbfa;border:1px solid #3a3d40;border-radius:4px;">
+      <button type="submit" style="padding:12px 20px;font-size:1rem;background:#fbfbfa;color:#101112;border:0;border-radius:4px;cursor:pointer;font-weight:600;">View the page</button>
+    </form>
+    <p id="gate-err" style="display:none;color:#e8a13d;margin:14px 0 0;">That is not it. Check the email from Ron.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var HASH="25cdb46d8d2115a24eb15c3c58f34f3330cfca4fec249ff70b7cad2bb560a0dd";
+  var gate=document.getElementById("gate");
+  function unlock(){ gate.parentNode.removeChild(gate); document.documentElement.style.overflow=""; }
+  document.documentElement.style.overflow="hidden";
+  try{ if(sessionStorage.getItem("wcy_ok")==="1"){ unlock(); return; } }catch(e){}
+  document.getElementById("gate-form").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var v=(document.getElementById("gate-pw").value||"").trim().toLowerCase();
+    var data=new TextEncoder().encode(v);
+    crypto.subtle.digest("SHA-256",data).then(function(buf){
+      var hex=Array.prototype.map.call(new Uint8Array(buf),function(b){return b.toString(16).padStart(2,"0");}).join("");
+      if(hex===HASH){ try{sessionStorage.setItem("wcy_ok","1");}catch(e){} unlock(); }
+      else{ document.getElementById("gate-err").style.display="block"; document.getElementById("gate-pw").select(); }
+    });
+  });
+})();
+</script>
 <a href="#main" class="skip-link">Skip to content</a>
 
 <header class="head" id="head">
