@@ -407,20 +407,6 @@
     }), { threshold: 0.25 }).observe(turn);
   }
 
-  /* ---------- the film: the facade becomes the player, in place ---------- */
-  const filmFacade = document.querySelector("[data-film-inline]");
-  if (filmFacade) {
-    filmFacade.addEventListener("click", () => {
-      const holder = filmFacade.closest(".film-inline");
-      const f = document.createElement("iframe");
-      f.src = "https://fast.wistia.net/embed/iframe/n765rk6v4z?autoPlay=true&playbar=true&dnt=true";
-      f.allow = "autoplay; fullscreen";
-      f.title = "Energy Plus: how we cut your energy bill, 6 minutes";
-      holder.classList.add("is-playing");
-      holder.replaceChildren(f);
-    });
-  }
-
 
   /* ---------- print: nothing ships collapsed ---------- */
   addEventListener("beforeprint", () => {
