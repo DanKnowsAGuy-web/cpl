@@ -988,8 +988,20 @@ dialog::backdrop { background: oklch(0.12 0.006 260 / 0.8); }
 .kit { list-style: none; margin: clamp(2rem, 4.5vw, 3.2rem) 0 0; padding: 0; display: grid; gap: clamp(1.8rem, 4vw, 2.6rem) clamp(1.5rem, 3vw, 2.2rem); }
 @media (min-width: 820px) { .kit { grid-template-columns: 1fr 1fr; } }
 .kit li { border-top: 1px solid var(--graphite-rule); padding-top: clamp(1.1rem, 2.5vw, 1.5rem); }
-.kit__img { border: 1px solid var(--graphite-rule); padding: 0.45rem; background: oklch(0.2 0.008 260); }
-.kit__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; filter: grayscale(1) contrast(1.05) brightness(0.92); display: block; }
+.kit__img {
+  border: 1px solid var(--graphite-rule);
+  padding: 0.45rem;
+  background: oklch(0.2 0.008 260);
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.kit__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05) brightness(0.92);
+  display: block;
+}
 
 /* scroll-reveal: photographs come alive from B&W to colour as they cross the viewport.
    site.js adds .reveal-on (motion allowed) and drives each img.js-reveal by its own --c
@@ -1013,8 +1025,8 @@ html.reveal-on img.js-reveal {
 
 /* the drafted plate inside a catalog frame (the coil section view) */
 .kit__img--draw { padding: 0.45rem; }
-.fig--kit { margin: 0; background: oklch(0.2 0.008 260); }
-.fig--kit svg { aspect-ratio: 3 / 2; width: 100%; height: auto; color: var(--panel-ink); }
+.fig--kit { margin: 0; line-height: 0; background: oklch(0.2 0.008 260); width: 100%; height: 100%; }
+.fig--kit svg { display: block; width: 100%; height: 100%; color: var(--panel-ink); }
 .fig--kit text { fill: var(--panel-body); font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.04em; }
 .fig--kit .soft-t { opacity: 0.75; font-size: 13.5px; }
 
@@ -1025,9 +1037,10 @@ html.reveal-on img.js-reveal {
   display: grid; gap: clamp(1.2rem, 2.5vw, 2rem); align-items: center;
 }
 @media (min-width: 820px) { .kit__flag { grid-template-columns: 5fr 4fr; } }
-.kit__flag .kit__img img { aspect-ratio: 16 / 9; }
+.kit__flag .kit__img { aspect-ratio: 16 / 9; }
+.kit__flag .kit__img img { aspect-ratio: auto; width: 100%; height: 100%; object-fit: cover; }
 .kit__flag .kit__img video {
-  display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  display: block; width: 100%; height: 100%; object-fit: cover;
   filter: grayscale(1) contrast(1.05) brightness(0.92);
 }
 .kit__flag h3 { margin-top: 0.35rem; font-size: var(--step-2); color: var(--panel-ink); }
