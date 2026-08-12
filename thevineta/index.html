@@ -195,15 +195,21 @@
         </article>
       </div>
 
-      <figure class="pipes" aria-label="Water in a pipe versus water with air bubbles: the same analogy as clean power versus distortion">
-        <div class="pipes__row">
-          <div class="pipe">
-            <div class="pipe__bore pipe__bore--clean" aria-hidden="true">
-              <span class="pipe__stream"></span>
-            </div>
-            <p class="pipe__cap"><strong>Clean water.</strong> The pump works once.</p>
+      <p class="analog__lede">When air bubbles enter the pipe, the meter still counts the flow. You pay for air, not water. Distortion works the same way.</p>
+      <figure class="analog" aria-label="Three rows: clean water versus air in the line, clean power versus distorted power, and the hotel machines that take the heat. Both meters read 100 kilowatt-hours.">
+        <div class="analog__grid">
+          <div class="analog__cell">
+            <p class="analog__cap">Clean water</p>
+            <div class="pipe__bore pipe__bore--clean" aria-hidden="true"><span class="pipe__stream"></span></div>
           </div>
-          <div class="pipe">
+          <div class="analog__cell analog__cell--kit">
+            <div class="analog__kit">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="36"/><line x1="30" y1="4" x2="30" y2="36"/><rect class="cab" x="13" y="8" width="14" height="10"/><line x1="20" y1="4" x2="20" y2="8"/></svg>
+              <span>Elevator motors <small>$50K&ndash;$150K / cab</small></span>
+            </div>
+          </div>
+          <div class="analog__cell analog__cell--hot">
+            <p class="analog__cap">Air in the line</p>
             <div class="pipe__bore pipe__bore--dirty" aria-hidden="true">
               <span class="pipe__stream"></span>
               <i class="blob" style="--i:0"></i>
@@ -212,72 +218,40 @@
               <i class="blob" style="--i:3"></i>
               <i class="blob" style="--i:4"></i>
             </div>
-            <p class="pipe__cap"><strong>Air in the line.</strong> The pump works twice. The pipe runs hot.</p>
+          </div>
+
+          <div class="analog__cell">
+            <svg class="analog__wave" viewBox="0 0 220 56" aria-hidden="true">
+              <path class="wave-clean" d="M6 28 C 24 8, 42 8, 60 28 S 96 48, 114 28 S 150 8, 168 28 S 204 48, 214 28"/>
+            </svg>
+          </div>
+          <div class="analog__cell analog__cell--kit">
+            <div class="analog__kit">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="14" width="32" height="16" rx="2"/><circle class="fan" cx="28" cy="22" r="5"/><line x1="8" y1="14" x2="8" y2="10"/><line x1="16" y1="14" x2="16" y2="10"/></svg>
+              <span>PTACs <small>$1,750&ndash;$3,200 / unit</small></span>
+            </div>
+          </div>
+          <div class="analog__cell analog__cell--hot">
+            <svg class="analog__wave" viewBox="0 0 220 56" aria-hidden="true">
+              <path class="wave-dirty" d="M6 28 C 16 10, 24 48, 34 24 S 50 6, 62 38 S 80 50, 92 18 S 110 6, 122 36 S 140 50, 152 20 S 170 8, 182 40 S 200 48, 214 28"/>
+            </svg>
+          </div>
+
+          <div class="analog__cell analog__cell--meter">
+            <p class="analog__kwh">100 kWh</p>
+          </div>
+          <div class="analog__cell analog__cell--kit">
+            <div class="analog__kit">
+              <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="14" width="12" height="12" rx="1"/><circle class="imp" cx="26" cy="20" r="8"/><line x1="4" y1="18" x2="0" y2="18"/><line x1="34" y1="20" x2="40" y2="20"/></svg>
+              <span>Pool pumps</span>
+            </div>
+          </div>
+          <div class="analog__cell analog__cell--hot analog__cell--meter">
+            <p class="analog__kwh">100 kWh</p>
           </div>
         </div>
-        <figcaption>Fig. 02 &middot; Distortion is air in the pipe. Power works the same way.</figcaption>
+        <figcaption>Fig. 02 &middot; Same meter. Heat and early failure on the right.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
       </figure>
-
-      <h3 class="hurt__h">What distortion hits first in a hotel.</h3>
-      <p class="hurt__lede">These three fail first, and cost the most to replace.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></p>
-      <ul class="hurt">
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--lift" viewBox="0 0 220 150" role="img">
-              <rect class="d" pathLength="1" x="78" y="14" width="64" height="122" rx="2"/>
-              <line class="d soft" pathLength="1" x1="86" y1="22" x2="86" y2="128"/>
-              <line class="d soft" pathLength="1" x1="134" y1="22" x2="134" y2="128"/>
-              <g class="cab">
-                <rect x="92" y="28" width="36" height="32" rx="1"/>
-                <line x1="98" y1="36" x2="122" y2="36"/>
-                <line x1="98" y1="44" x2="116" y2="44"/>
-              </g>
-              <line class="d amber" pathLength="1" x1="110" y1="14" x2="110" y2="28"/>
-            </svg>
-          </div>
-          <h3>Elevator motors</h3>
-          <p>Hard-start every time a cab moves. Distortion cooks the drive.</p>
-          <p class="hurt__cost">$50K&ndash;$150K <span>per cab to modernize</span></p>
-        </li>
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--ptac" viewBox="0 0 220 150" role="img">
-              <rect class="d" pathLength="1" x="36" y="42" width="148" height="72" rx="3"/>
-              <rect class="d soft" pathLength="1" x="48" y="54" width="72" height="48"/>
-              <g transform="translate(156 78)">
-                <g class="fan">
-                  <circle r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
-                </g>
-              </g>
-              <path class="heat" d="M58 38 C58 28, 70 28, 70 38"/>
-              <path class="heat" d="M78 36 C78 24, 92 24, 92 36"/>
-              <path class="heat" d="M100 38 C100 28, 112 28, 112 38"/>
-            </svg>
-          </div>
-          <h3>PTACs</h3>
-          <p>Every key has one. They draw in pulses. Heat is what retires them.</p>
-          <p class="hurt__cost">$1,750&ndash;$3,200 <span>per unit to replace</span></p>
-        </li>
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--pump" viewBox="0 0 220 150" role="img">
-              <rect class="d" pathLength="1" x="48" y="58" width="58" height="42" rx="3"/>
-              <circle class="d" pathLength="1" cx="138" cy="80" r="28"/>
-              <g transform="translate(138 80)">
-                <g class="imp">
-                  <path d="M0 0 L0 -18 A18 18 0 0 1 16 -8 Z M0 0 L16 8 A18 18 0 0 1 -16 8 Z M0 0 L-16 -8 A18 18 0 0 1 0 -18 Z"/>
-                </g>
-              </g>
-              <path class="d soft" pathLength="1" d="M48 70 H28 V90 H48"/>
-              <path class="d amber" pathLength="1" d="M166 80 H196"/>
-              <path class="d soft" pathLength="1" d="M196 80 V48 H84 V58"/>
-            </svg>
-          </div>
-          <h3>Pool pumps</h3>
-          <p>They run whenever the water moves. Distortion cooks the motor.</p>
-        </li>
-      </ul>
       <div class="also">
         <p class="also__h">And the rest of the hotel</p>
         <ul>

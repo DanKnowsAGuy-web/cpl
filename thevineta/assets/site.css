@@ -376,7 +376,7 @@ html.hero-pin .bill .mk-t {
 .always__note { margin-top: clamp(1.6rem, 3.5vw, 2.4rem); font-size: var(--step--1); color: var(--panel-body); max-width: 58ch; }
 .always__note strong { color: var(--panel-ink); }
 
-/* distortion: three facts, then the pipe, then the machines */
+/* distortion: three facts, then the water / power / hotel analog */
 .tri {
   margin-top: clamp(1.8rem, 4vw, 2.8rem);
   display: grid;
@@ -393,12 +393,9 @@ html.hero-pin .bill .mk-t {
 .tri h3 { margin-top: 0.55rem; font-size: var(--step-0); max-width: 18ch; }
 .tri p { margin-top: 0.5rem; font-size: var(--step--1); max-width: 32ch; }
 
-.pipes { margin-top: clamp(2rem, 4.5vw, 3.2rem); }
-.pipes__row { display: grid; gap: 1.2rem; }
-@media (min-width: 700px) { .pipes__row { grid-template-columns: 1fr 1fr; gap: 1.6rem; } }
 .pipe__bore {
   position: relative;
-  height: 64px;
+  height: 44px;
   border: 2px solid var(--ink);
   border-radius: 999px;
   overflow: hidden;
@@ -433,15 +430,129 @@ html.hero-pin .bill .mk-t {
 .blob:nth-child(3) { width: 12px; height: 12px; }
 .blob:nth-child(5) { width: 22px; height: 16px; border-radius: 50% 45% 55% 50%; }
 .blob:nth-child(6) { width: 14px; height: 14px; }
-.pipe__cap { margin-top: 0.65rem; font-size: var(--step--1); max-width: none; }
-.pipes figcaption {
-  margin-top: 0.9rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint);
-}
 @keyframes pipeFlow { to { background-position: 40px 0; } }
 @keyframes blobDrift {
   0% { left: -16%; }
   100% { left: 108%; }
+}
+
+.analog { margin-top: 0.85rem; }
+.analog__lede {
+  margin-top: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: var(--step-1);
+  max-width: 44ch;
+  line-height: 1.45;
+}
+.analog__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  gap: 1px;
+}
+.analog__cell {
+  background: var(--paper);
+  padding: 0.75rem 0.7rem 0.8rem;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+}
+.analog__cell--hot { background: oklch(0.97 0.012 80); }
+.analog__cell--kit { background: var(--paper-2); }
+.analog__cell--meter { align-items: center; }
+.analog__cap {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.analog__cell--hot .analog__cap { color: var(--faint); }
+.analog__kwh {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.analog__wave {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
+}
+.analog__wave path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 8 4;
+  animation: waveflow 3.2s linear infinite;
+}
+.analog__wave .wave-dirty { stroke: oklch(0.46 0.005 270); }
+.analog__kit {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+.analog__kit svg {
+  width: 2rem;
+  height: 2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.analog__kit .cab { fill: var(--paper); animation: cabNudge 2.8s var(--ease) infinite; }
+.analog__kit .fan, .analog__kit .imp {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spinSlow 2.4s linear infinite;
+}
+.analog__kit span {
+  font-size: var(--step--1);
+  color: var(--ink);
+  line-height: 1.3;
+}
+.analog__kit small {
+  display: block;
+  margin-top: 0.12rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  color: var(--amber-ink);
+}
+.analog figcaption {
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+@keyframes waveflow { to { stroke-dashoffset: -36; } }
+@keyframes cabNudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+@media (max-width: 639.9px) {
+  .analog__cell { padding: 0.55rem 0.45rem 0.6rem; }
+  .pipe__bore { height: 32px; }
+  .analog__kit { grid-template-columns: 1.5rem 1fr; gap: 0.35rem; }
+  .analog__kit svg { width: 1.5rem; height: 1.5rem; }
+  .analog__kit span { font-size: 0.72rem; }
+  .analog__kit small { font-size: 0.56rem; }
+  .analog__cap { font-size: 0.56rem; letter-spacing: 0.02em; text-wrap: balance; }
+  .analog__kwh { font-size: 0.95rem; }
 }
 
 .hurt__h { margin-top: clamp(2.2rem, 5vw, 3.4rem); font-size: var(--step-2); max-width: 22ch; }
