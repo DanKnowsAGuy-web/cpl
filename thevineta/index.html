@@ -196,83 +196,88 @@
       </div>
 
       <p class="analog__lede">When air bubbles enter the pipe, the meter still counts the flow. You pay for air, not water. Distortion works the same way.</p>
-      <figure class="analog" aria-label="Clean water and a 100 kilowatt-hour meter on the left. A machine in the middle turns that current jagged. Air in the line and a 115 kilowatt-hour meter on the right.">
+      <figure class="analog" aria-label="Treated clean water on the left, a PTAC in the middle, distortion and air in the line on the right. The meter reads 100 kilowatt-hours on the left and 115 on the right.">
         <div class="analog__board">
           <div class="analog__head">
-            <p class="analog__cap">Clean water</p>
-            <p class="analog__cap analog__cap--mid">The machine</p>
-            <p class="analog__cap analog__cap--hot">Air in the line</p>
+            <p class="analog__cap"><span class="analog__pair">Treated</span>Clean water</p>
+            <p class="analog__cap analog__cap--mid" aria-hidden="true"></p>
+            <p class="analog__cap analog__cap--hot"><span class="analog__pair">Distortion</span>Air in the line</p>
           </div>
-          <svg class="analog__svg" viewBox="0 0 720 200" aria-hidden="true">
-            <rect class="a-wash a-wash--mid" x="225" y="0" width="270" height="200"/>
-            <rect class="a-wash a-wash--hot" x="495" y="0" width="225" height="200"/>
-            <line class="a-rule" x1="225" y1="0" x2="225" y2="200"/>
-            <line class="a-rule" x1="495" y1="0" x2="495" y2="200"/>
+          <svg class="analog__svg" viewBox="0 0 720 220" aria-hidden="true">
+            <rect class="a-wash a-wash--mid" x="225" y="0" width="270" height="220"/>
+            <rect class="a-wash a-wash--hot" x="495" y="0" width="225" height="220"/>
+            <line class="a-rule" x1="225" y1="0" x2="225" y2="220"/>
+            <line class="a-rule" x1="495" y1="0" x2="495" y2="220"/>
 
-            <rect class="a-pipe" x="28" y="22" width="170" height="40" rx="20"/>
-            <line class="a-flow" x1="48" y1="42" x2="178" y2="42"/>
-            <polyline class="a-flow" points="166,34 180,42 166,50"/>
+            <rect class="a-pipe" x="28" y="18" width="170" height="40" rx="20"/>
+            <line class="a-flow" x1="48" y1="38" x2="178" y2="38"/>
+            <polyline class="a-flow" points="166,30 180,38 166,46"/>
 
-            <rect class="a-pipe" x="522" y="22" width="170" height="40" rx="20"/>
-            <line class="a-flow a-flow--faint" x1="542" y1="42" x2="672" y2="42"/>
-            <polyline class="a-flow a-flow--faint" points="660,34 674,42 660,50"/>
-            <circle class="a-blob b0" cx="548" cy="34" r="5.5"/>
-            <circle class="a-blob b1" cx="572" cy="50" r="4"/>
-            <circle class="a-blob b2" cx="598" cy="36" r="6.5"/>
-            <circle class="a-blob b3" cx="628" cy="48" r="3.5"/>
-            <circle class="a-blob b0" cx="652" cy="33" r="5"/>
+            <rect class="a-pipe" x="522" y="18" width="170" height="40" rx="20"/>
+            <line class="a-flow a-flow--faint" x1="542" y1="38" x2="672" y2="38"/>
+            <polyline class="a-flow a-flow--faint" points="660,30 674,38 660,46"/>
+            <circle class="a-blob b0" cx="548" cy="30" r="5.5"/>
+            <circle class="a-blob b1" cx="572" cy="46" r="4"/>
+            <circle class="a-blob b2" cx="598" cy="32" r="6.5"/>
+            <circle class="a-blob b3" cx="628" cy="44" r="3.5"/>
+            <circle class="a-blob b0" cx="652" cy="29" r="5"/>
 
-            <path class="a-wave a-wave--clean" d="M28 148 C 58 118, 88 118, 118 148 S 178 178, 208 148"/>
-            <path class="a-wave a-wave--dirty" d="M522 148 C 536 118, 546 176, 560 136 S 580 112, 594 168 S 614 180, 628 124 S 648 112, 662 164 S 678 176, 692 148"/>
+            <path class="a-wave a-wave--clean" d="M28 184 C 58 154, 88 154, 118 184 S 178 214, 208 184"/>
+            <path class="a-wave a-wave--dirty" d="M522 184 C 536 154, 546 212, 560 172 S 580 148, 594 204 S 614 216, 628 160 S 648 148, 662 200 S 678 212, 692 184"/>
 
-            <line class="a-in" x1="198" y1="100" x2="318" y2="100"/>
-            <polyline class="a-in" points="308,92 320,100 308,108"/>
+            <line class="a-in" x1="198" y1="114" x2="286" y2="114"/>
+            <polyline class="a-in" points="276,106 288,114 276,122"/>
 
-            <path class="a-out-glow" d="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
-            <path class="a-out" d="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
+            <path class="a-out-glow" d="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
+            <path class="a-out" d="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
             <circle class="a-spark" r="3.2">
-              <animateMotion dur="2.4s" repeatCount="indefinite" path="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
             </circle>
 
-            <g class="a-motor">
-              <circle class="a-motor-ring" cx="360" cy="100" r="40"/>
-              <circle class="a-motor-ring" cx="360" cy="100" r="28"/>
-              <circle class="a-motor-hub" cx="360" cy="100" r="8"/>
-              <path class="a-winding" d="M338 80 A28 28 0 0 1 382 80"/>
-              <path class="a-winding" d="M338 120 A28 28 0 0 0 382 120"/>
-              <line class="a-shaft" x1="360" y1="140" x2="360" y2="168"/>
-              <path class="a-heat" d="M346 52 Q350 40 346 30"/>
-              <path class="a-heat" d="M360 48 Q364 36 360 26"/>
-              <path class="a-heat" d="M374 52 Q378 40 374 30"/>
+            <g class="a-ptac" transform="translate(360 114)">
+              <rect class="a-ptac-body" x="-74" y="-34" width="148" height="68" rx="3"/>
+              <rect class="a-ptac-vent" x="-62" y="-20" width="72" height="40"/>
+              <line class="a-ptac-slat" x1="-54" y1="-10" x2="-2" y2="-10"/>
+              <line class="a-ptac-slat" x1="-54" y1="0" x2="-2" y2="0"/>
+              <line class="a-ptac-slat" x1="-54" y1="10" x2="-2" y2="10"/>
+              <g transform="translate(44 0)">
+                <g class="a-fan">
+                  <circle r="18"/>
+                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
+                </g>
+              </g>
+              <path class="a-heat" d="M-52 -38 C-52 -52, -38 -52, -38 -38"/>
+              <path class="a-heat" d="M-28 -40 C-28 -56, -12 -56, -12 -40"/>
+              <path class="a-heat" d="M-2 -38 C-2 -52, 12 -52, 12 -38"/>
             </g>
           </svg>
           <div class="analog__foot">
             <div class="analog__meter">
               <p class="analog__kwh">100 kWh</p>
-              <p class="analog__sub">actual use</p>
             </div>
             <div class="analog__meter analog__meter--mid" aria-hidden="true"></div>
             <div class="analog__meter analog__meter--hot">
               <p class="analog__kwh">115 kWh</p>
-              <p class="analog__sub">you pay for</p>
             </div>
           </div>
         </div>
-        <figcaption>Fig. 02 &middot; Same work. Fifteen extra kilowatt-hours on the bill.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
+        <figcaption>Fig. 02<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
       </figure>
 
       <p class="hurt__kicker">The three that take it first</p>
       <ul class="hurt">
         <li>
           <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg" viewBox="0 0 120 76">
-              <line class="d soft" x1="40" y1="6" x2="40" y2="70"/>
-              <line class="d soft" x1="80" y1="6" x2="80" y2="70"/>
-              <line class="d" x1="60" y1="6" x2="60" y2="18"/>
+            <svg class="hurt__svg hurt__svg--lift" viewBox="0 0 220 150">
+              <rect class="d" x="78" y="14" width="64" height="122" rx="2"/>
+              <line class="d soft" x1="86" y1="22" x2="86" y2="128"/>
+              <line class="d soft" x1="134" y1="22" x2="134" y2="128"/>
               <g class="cab">
-                <rect x="46" y="16" width="28" height="18" rx="1"/>
-                <line x1="60" y1="16" x2="60" y2="34"/>
+                <rect x="92" y="28" width="36" height="32" rx="1"/>
+                <line x1="98" y1="36" x2="122" y2="36"/>
+                <line x1="98" y1="44" x2="116" y2="44"/>
               </g>
+              <line class="d amber" x1="110" y1="14" x2="110" y2="28"/>
             </svg>
           </div>
           <h3>Elevator motors</h3>
@@ -280,20 +285,18 @@
         </li>
         <li>
           <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg" viewBox="0 0 120 76">
-              <rect class="d" x="14" y="30" width="92" height="34" rx="2"/>
-              <g class="fan" transform="translate(82 47)">
-                <circle class="d" r="11"/>
-                <path d="M0-3 Q6-12 10-8 Q4-2 0-3Z"/>
-                <path d="M3 0 Q12 6 8 10 Q2 4 3 0Z"/>
-                <path d="M0 3 Q-6 12-10 8 Q-4 2 0 3Z"/>
-                <path d="M-3 0 Q-12-6-8-10 Q-2-4-3 0Z"/>
+            <svg class="hurt__svg hurt__svg--ptac" viewBox="0 0 220 150">
+              <rect class="d" x="36" y="42" width="148" height="72" rx="3"/>
+              <rect class="d soft" x="48" y="54" width="72" height="48"/>
+              <g transform="translate(156 78)">
+                <g class="fan">
+                  <circle r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
+                </g>
               </g>
-              <path class="heat" d="M28 28 Q30 18 28 10"/>
-              <path class="heat" d="M38 26 Q40 16 38 8"/>
-              <path class="heat" d="M48 28 Q50 18 48 10"/>
-              <line class="d soft" x1="22" y1="30" x2="22" y2="22"/>
-              <line class="d soft" x1="34" y1="30" x2="34" y2="22"/>
+              <path class="heat" d="M58 38 C58 28, 70 28, 70 38"/>
+              <path class="heat" d="M78 36 C78 24, 92 24, 92 36"/>
+              <path class="heat" d="M100 38 C100 28, 112 28, 112 38"/>
             </svg>
           </div>
           <h3>PTACs</h3>
@@ -301,15 +304,17 @@
         </li>
         <li>
           <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg" viewBox="0 0 120 76">
-              <path class="d soft" d="M16 58 Q36 48 52 58 T88 58 T120 58"/>
-              <circle class="d" cx="58" cy="34" r="16"/>
-              <circle class="imp" cx="58" cy="34" r="7"/>
-              <line class="d" x1="74" y1="34" x2="96" y2="34"/>
-              <line class="d" x1="20" y1="34" x2="42" y2="34"/>
-              <path class="heat" d="M50 16 Q52 8 50 2"/>
-              <path class="heat" d="M58 14 Q60 6 58 0"/>
-              <path class="heat" d="M66 16 Q68 8 66 2"/>
+            <svg class="hurt__svg hurt__svg--pump" viewBox="0 0 220 150">
+              <rect class="d" x="48" y="58" width="58" height="42" rx="3"/>
+              <circle class="d" cx="138" cy="80" r="28"/>
+              <g transform="translate(138 80)">
+                <g class="imp">
+                  <path d="M0 0 L0 -18 A18 18 0 0 1 16 -8 Z M0 0 L16 8 A18 18 0 0 1 -16 8 Z M0 0 L-16 -8 A18 18 0 0 1 0 -18 Z"/>
+                </g>
+              </g>
+              <path class="d soft" d="M48 70 H28 V90 H48"/>
+              <path class="d amber" d="M166 80 H196"/>
+              <path class="d soft" d="M196 80 V48 H84 V58"/>
             </svg>
           </div>
           <h3>Pool pumps</h3>
