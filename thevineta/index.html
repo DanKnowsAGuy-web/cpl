@@ -138,21 +138,10 @@
   </section>
   </div>
 
-  <section class="beat" id="problem" aria-labelledby="problem-h">
-    <div class="wrap beat__grid">
-      <p class="monument" aria-hidden="true">$12.70<span class="monument__unit">/kW</span></p>
-      <div class="beat__copy">
-        <h2 id="problem-h">Thirty minutes. Billed all month.</h2>
-        <p class="lead">Rooms, kitchen, and pool at once. That peak is the extra pressure. <strong>We take it off.</strong></p>
-        <details class="gate">
-          <summary><span class="plus" aria-hidden="true">+</span>What sets the peak</summary>
-          <div class="gate__body">
-            <p>A hotel morning is every system at once. FPL keeps the worst 30 minutes and bills it for the period &mdash; plus the per-kW riders that ride the same peak.<sup class="fn"><a href="#notes" aria-label="See note 15">15</a></sup></p>
-          </div>
-        </details>
-      </div>
-    </div>
-    <div class="wrap">
+  <section class="beat beat--rule" id="problem" aria-labelledby="problem-h">
+    <div class="wrap beat__narrow">
+      <h2 id="problem-h">$12.70/kW for thirty minutes. Billed all month.</h2>
+      <p class="lead">This is what FPL charges for the single highest 30 minutes.<sup class="fn"><a href="#notes" aria-label="See note 15">15</a></sup> Cut the waste, and that peak comes down. Peak-shaving strategies take the demand charge off.</p>
       <figure class="fig" aria-label="Diagram: one 30-minute peak sets the demand charge for the entire month">
         <svg viewBox="0 0 640 220" role="img" aria-hidden="true">
           <line class="d soft" pathLength="1" style="--d:0" x1="40" y1="180" x2="600" y2="180"/>
@@ -169,9 +158,9 @@
 
   <section class="beat beat--dark" id="money" aria-labelledby="money-h">
     <div class="wrap beat__narrow">
-      <h2 id="money-h">Then the waste in the machines you already run.</h2>
-      <p class="lead lead--dark">Compressors burn whether they are cooling or not &mdash; new or old.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup> <strong>Retrofit first. The rooms stay at 72.</strong></p>
-      <p class="readout">15&ndash;30%<small><strong>less HVAC energy on the systems you already run,</strong> before anyone talks about replacement.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></small></p>
+      <h2 id="money-h">HVAC is your most expensive bill.</h2>
+      <p class="lead lead--dark">It is also where the most waste sits. One way we cut the peak is by pulling that lever.</p>
+      <p class="readout">15&ndash;30%<small><strong>less HVAC energy</strong> on the systems you already run.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></small></p>
       <figure class="fig" aria-label="Bar chart: energy to hold a room at 72, today versus after the retrofit">
         <svg viewBox="0 0 640 300" role="img" aria-hidden="true">
           <defs>
@@ -199,8 +188,7 @@
   <section class="beat beat--rule" id="always" aria-labelledby="always-h">
     <div class="wrap beat__narrow">
       <h2 id="always-h">The hotel never closes.</h2>
-      <p class="lead">At 2 a.m. the keys are still at 72. The pool is still moving. <strong>Demand and waste run all year.</strong></p>
-      <p class="readout readout--time">8,760<small><strong>hours a year.</strong> An office powers down. This hotel does not.</small></p>
+      <p class="lead">At 2 a.m. the keys are still at 72. The pool is still moving. Demand runs all year.</p>
       <figure class="fig" aria-label="Diagram: public spaces wind down overnight while guest floors and the pool loop never drop">
         <svg viewBox="0 0 640 300" role="img" aria-hidden="true">
           <rect class="nightband fade" style="--o:0.07" x="300" y="44" width="170" height="192"/>
@@ -215,12 +203,132 @@
           <text class="lbl" x="470" y="256" text-anchor="middle">6 a.m.</text>
           <text class="lbl soft-t" x="322" y="288" text-anchor="middle">one hotel &middot; one day &middot; the rooms and the water never rest</text>
         </svg>
-        <figcaption>Fig. 03 &middot; The load that runs every hour of the year</figcaption>
+        <figcaption>Fig. 03 &middot; The rooms and the water never rest</figcaption>
       </figure>
       <figure class="plate">
         <div class="plate__frame"><img class="js-reveal" src="assets/img/always-night.jpg" alt="A historic Palm Beach hotel after midnight, a sparse grid of lit guest-room windows" loading="lazy"></div>
         <figcaption>Survey plate 1 &middot; After midnight, every lit window is a room still running</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <section class="beat beat--rule" id="distort" aria-labelledby="distort-h">
+    <div class="wrap beat__narrow">
+      <h2 id="distort-h">Distortion costs more, wears more, and ends machines early.</h2>
+      <p class="lead">Machines in this hotel do not draw power smoothly. That roughness is distortion. Cleaning it cuts waste, cuts maintenance up to 40%, and lets equipment live out its full life.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup></p>
+      <div class="tri" role="list">
+        <article role="listitem">
+          <p class="tri__kicker">The bill</p>
+          <h3>You pay for heat that never cools a room.</h3>
+          <p>Distortion turns paid power into waste heat. That heat also fattens the peak.</p>
+        </article>
+        <article role="listitem">
+          <p class="tri__kicker">Maintenance</p>
+          <h3>Up to 40% of the service bill.</h3>
+          <p>Distortion is a key driver of those calls. Cleaning the power cuts them.</p>
+        </article>
+        <article role="listitem">
+          <p class="tri__kicker">Equipment life</p>
+          <h3>Heat retires machines early.</h3>
+          <p>Clean power gives them their full life &mdash; five to fifteen years more, in measured cases.</p>
+        </article>
+      </div>
+
+      <figure class="pipes" aria-label="Water in a pipe versus water with air bubbles: the same analogy as clean power versus distortion">
+        <div class="pipes__row">
+          <div class="pipe">
+            <div class="pipe__bore pipe__bore--clean" aria-hidden="true">
+              <span class="pipe__stream"></span>
+            </div>
+            <p class="pipe__cap"><strong>Clean water.</strong> The pump works once.</p>
+          </div>
+          <div class="pipe">
+            <div class="pipe__bore pipe__bore--dirty" aria-hidden="true">
+              <span class="pipe__stream"></span>
+              <i class="blob" style="--i:0"></i>
+              <i class="blob" style="--i:1"></i>
+              <i class="blob" style="--i:2"></i>
+              <i class="blob" style="--i:3"></i>
+              <i class="blob" style="--i:4"></i>
+            </div>
+            <p class="pipe__cap"><strong>Air in the line.</strong> The pump works twice. The pipe runs hot.</p>
+          </div>
+        </div>
+        <figcaption>Fig. 04 &middot; Distortion is air in the pipe. Power works the same way.</figcaption>
+      </figure>
+
+      <h3 class="hurt__h">What distortion hits first in a hotel.</h3>
+      <p class="hurt__lede">These three fail first, and cost the most to replace.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></p>
+      <ul class="hurt">
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg hurt__svg--lift" viewBox="0 0 220 150" role="img">
+              <rect class="d" pathLength="1" x="78" y="14" width="64" height="122" rx="2"/>
+              <line class="d soft" pathLength="1" x1="86" y1="22" x2="86" y2="128"/>
+              <line class="d soft" pathLength="1" x1="134" y1="22" x2="134" y2="128"/>
+              <g class="cab">
+                <rect x="92" y="28" width="36" height="32" rx="1"/>
+                <line x1="98" y1="36" x2="122" y2="36"/>
+                <line x1="98" y1="44" x2="116" y2="44"/>
+              </g>
+              <line class="d amber" pathLength="1" x1="110" y1="14" x2="110" y2="28"/>
+            </svg>
+          </div>
+          <h3>Elevator motors</h3>
+          <p>Hard-start every time a cab moves. Distortion cooks the drive.</p>
+          <p class="hurt__cost">$50K&ndash;$150K <span>per cab to modernize</span></p>
+        </li>
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg hurt__svg--ptac" viewBox="0 0 220 150" role="img">
+              <rect class="d" pathLength="1" x="36" y="42" width="148" height="72" rx="3"/>
+              <rect class="d soft" pathLength="1" x="48" y="54" width="72" height="48"/>
+              <g transform="translate(156 78)">
+                <g class="fan">
+                  <circle r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
+                </g>
+              </g>
+              <path class="heat" d="M58 38 C58 28, 70 28, 70 38"/>
+              <path class="heat" d="M78 36 C78 24, 92 24, 92 36"/>
+              <path class="heat" d="M100 38 C100 28, 112 28, 112 38"/>
+            </svg>
+          </div>
+          <h3>PTACs</h3>
+          <p>Every key has one. They draw in pulses. Heat is what retires them.</p>
+          <p class="hurt__cost">$1,750&ndash;$3,200 <span>per unit to replace</span></p>
+        </li>
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg hurt__svg--pump" viewBox="0 0 220 150" role="img">
+              <rect class="d" pathLength="1" x="48" y="58" width="58" height="42" rx="3"/>
+              <circle class="d" pathLength="1" cx="138" cy="80" r="28"/>
+              <g transform="translate(138 80)">
+                <g class="imp">
+                  <path d="M0 0 L0 -18 A18 18 0 0 1 16 -8 Z M0 0 L16 8 A18 18 0 0 1 -16 8 Z M0 0 L-16 -8 A18 18 0 0 1 0 -18 Z"/>
+                </g>
+              </g>
+              <path class="d soft" pathLength="1" d="M48 70 H28 V90 H48"/>
+              <path class="d amber" pathLength="1" d="M166 80 H196"/>
+              <path class="d soft" pathLength="1" d="M196 80 V48 H84 V58"/>
+            </svg>
+          </div>
+          <h3>Pool pumps</h3>
+          <p>They run whenever the water moves. Distortion cooks the motor.</p>
+        </li>
+      </ul>
+      <div class="also">
+        <p class="also__h">And the rest of the hotel</p>
+        <ul>
+          <li>Kitchen hoods</li>
+          <li>VRFs</li>
+          <li>Laundry motors</li>
+          <li>Ice machines</li>
+          <li>Booster pumps</li>
+          <li>Spa and amenity pumps</li>
+          <li>Chillers <span>&mdash; summer emergency rental $15K&ndash;$40K a week, plus lost rooms</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -335,7 +443,7 @@
           <text class="lbl" x="479" y="194" text-anchor="middle">7 days &middot; after</text>
           <text class="lbl soft-t" x="320" y="216" text-anchor="middle">per unit &middot; witnessed by anyone you choose</text>
         </svg>
-        <figcaption>Fig. 04 &middot; The Exam's proof window</figcaption>
+        <figcaption>Fig. 05 &middot; The Exam's proof window</figcaption>
       </figure>
       <div class="floor">
         <h3>The Floor</h3>
@@ -587,6 +695,7 @@
         <li><span class="n">9</span><span><strong>Third-party evaluations and named organizations.</strong> References to NASA, named utilities, named hotels, and other organizations reflect publicly available reports and evaluations concerning the underlying technologies that Energy Plus deploys. They do not refer to Energy Plus or CPL, and do not constitute or imply endorsement, sponsorship, certification, or affiliation. They are not claims about The Vineta.</span></li>
         <li><span class="n">12</span><span><strong>Equipment life, maintenance, and guest comfort.</strong> Statements regarding extended equipment life, reduced maintenance, improved humidity control, temperature stability, guest comfort, and single-application or long-lasting benefits assume proper installation, operation, and maintenance. They are not a warranty, and actual outcomes will vary. Nothing here replaces your own building monitoring, life-safety systems, or regulatory obligations.</span></li>
         <li><span class="n">15</span><span><strong>FPL demand rates for this address.</strong> The $12.70/kW demand charge, $33.71 customer charge, and per-kW riders cited on this page are taken from Florida Power & Light's published Business rate schedule for General Service Demand (GSD-1), effective January 2026. FPL measures demand as the highest 30-minute interval in the billing period. A 41-key hotel at 363 Cocoanut Row, Palm Beach, sits in FPL territory and is billed on a commercial demand schedule; GSD-1 (25–499 kW) is the schedule used here as the published rate for a hotel of this size. The Exam confirms the actual tariff and the actual billed kW from this address's interval data. The statement that demand is often a third or more of a hotel electric bill is an industry-typical range, not a reading of The Vineta's bills. No dollar total, billed-kW figure, or monthly spend on this page is taken from The Vineta's FPL account. Photography is illustrative documentary imagery of Mediterranean Revival Palm Beach architecture and is not official photography of The Vineta Hotel.</span></li>
+        <li><span class="n">16</span><span><strong>Hotel equipment costs.</strong> Replacement and modernization ranges for PTACs, elevator cabs, and chiller emergency rentals are industry-typical figures used in the Energy Plus hotel estimator. They are not quotes for The Vineta and are not taken from this hotel's vendor contracts. Actual cost depends on the unit, the building, and the market at the time of replacement.</span></li>
       </ul>
     </div>
 

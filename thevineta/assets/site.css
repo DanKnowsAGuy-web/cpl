@@ -261,35 +261,23 @@ html.hero-pin .bill .mk-t {
 .beat--rule > .wrap { border-top: 2px solid var(--ink); margin-top: clamp(1.5rem, 3.5vw, 3rem); padding-top: clamp(2.5rem, 5vw, 4rem); }
 .beat__narrow { max-width: calc(var(--narrow) + 2 * clamp(1.25rem, 4vw, 2.5rem)); }
 .beat h2 { font-size: var(--step-3); max-width: 24ch; }
+#problem h2 { max-width: 18ch; }
 .lead { margin-top: 1.4rem; font-size: var(--step-1); line-height: 1.5; }
 .lead + p { margin-top: 1rem; }
 .quiet { margin-top: 1.6rem; font-size: var(--step--1); color: var(--faint); }
 .quiet--dark { color: var(--panel-body); }
 .quiet--dark a { color: var(--panel-ink); text-decoration-color: var(--amber); }
 
-/* problem: the monument beside the claim */
+/* problem: one column, one claim — never a monument beside the headline */
 .beat__grid { display: grid; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
 @media (min-width: 920px) {
   .beat__grid { grid-template-columns: 5fr 7fr; border-top: 2px solid var(--ink); padding-top: clamp(2.5rem, 5vw, 4rem); }
-  #problem.beat .beat__grid { grid-template-columns: minmax(7.5rem, 11rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); }
 }
-@media (max-width: 919.9px) { #problem .wrap { border-top: 2px solid var(--ink); padding-top: 2.5rem; } }
 .monument {
   font-weight: 830; font-stretch: 125%; font-size: var(--monument); line-height: 0.88;
   letter-spacing: -0.02em; color: var(--ink); font-variant-numeric: tabular-nums;
 }
 .monument__unit { font-size: 0.4em; font-weight: 600; font-stretch: 100%; color: var(--faint); }
-#problem .monument {
-  font-size: clamp(2.6rem, 1.8rem + 3vw, 4.2rem);
-  line-height: 0.84;
-  letter-spacing: -0.03em;
-}
-#problem .monument__unit {
-  display: block;
-  margin-top: 0.18em;
-  font-size: 0.34em;
-  letter-spacing: 0.06em;
-}
 
 /* the listen test: two instruments, one difference */
 .listen { margin-top: clamp(1.8rem, 4vw, 2.6rem); display: grid; gap: 1.1rem; }
@@ -368,6 +356,149 @@ html.hero-pin .bill .mk-t {
 .readout--time small { max-width: 42ch; }
 .always__note { margin-top: clamp(1.6rem, 3.5vw, 2.4rem); font-size: var(--step--1); color: var(--panel-body); max-width: 58ch; }
 .always__note strong { color: var(--panel-ink); }
+
+/* distortion: three facts, then the pipe, then the machines */
+.tri {
+  margin-top: clamp(1.8rem, 4vw, 2.8rem);
+  display: grid;
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+@media (min-width: 760px) { .tri { grid-template-columns: 1fr 1fr 1fr; } }
+.tri article { background: var(--paper); padding: 1.15rem 1.2rem 1.3rem; }
+.tri__kicker {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin: 0;
+}
+.tri h3 { margin-top: 0.55rem; font-size: var(--step-0); max-width: 18ch; }
+.tri p { margin-top: 0.5rem; font-size: var(--step--1); max-width: 32ch; }
+
+.pipes { margin-top: clamp(2rem, 4.5vw, 3.2rem); }
+.pipes__row { display: grid; gap: 1.2rem; }
+@media (min-width: 700px) { .pipes__row { grid-template-columns: 1fr 1fr; gap: 1.6rem; } }
+.pipe__bore {
+  position: relative;
+  height: 64px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.pipe__stream {
+  position: absolute; inset: 8px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0 10px,
+    transparent 10px 20px
+  );
+  background-size: 40px 100%;
+  opacity: 0.16;
+  animation: pipeFlow 1.6s linear infinite;
+}
+.pipe__bore--dirty { background: oklch(0.94 0.01 80); }
+.pipe__bore--dirty .pipe__stream { opacity: 0.1; animation-duration: 2.4s; }
+.blob {
+  position: absolute;
+  top: 50%;
+  left: -18%;
+  width: 18px; height: 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  transform: translateY(-50%);
+  animation: blobDrift 3.4s linear infinite;
+  animation-delay: calc(var(--i) * -0.68s);
+}
+.blob:nth-child(3) { width: 12px; height: 12px; }
+.blob:nth-child(5) { width: 22px; height: 16px; border-radius: 50% 45% 55% 50%; }
+.blob:nth-child(6) { width: 14px; height: 14px; }
+.pipe__cap { margin-top: 0.65rem; font-size: var(--step--1); max-width: none; }
+.pipes figcaption {
+  margin-top: 0.9rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint);
+}
+@keyframes pipeFlow { to { background-position: 40px 0; } }
+@keyframes blobDrift {
+  0% { left: -16%; }
+  100% { left: 108%; }
+}
+
+.hurt__h { margin-top: clamp(2.2rem, 5vw, 3.4rem); font-size: var(--step-2); max-width: 22ch; }
+.hurt__lede { margin-top: 0.7rem; font-size: var(--step-0); }
+.hurt {
+  list-style: none; margin: 1.4rem 0 0; padding: 0;
+  display: grid; gap: 1rem;
+}
+@media (min-width: 800px) { .hurt { grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; } }
+.hurt li {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 0.7rem 0.7rem 1.15rem;
+}
+.hurt__stage {
+  background: var(--paper-2);
+  border: 1px solid var(--rule);
+  aspect-ratio: 11 / 7;
+  display: grid; place-items: center;
+}
+.hurt__svg { width: 100%; height: 100%; color: var(--ink); }
+.hurt__svg .d { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.hurt__svg .soft { stroke-width: 1; opacity: 0.5; }
+.hurt__svg .amber { stroke: var(--amber-ink); stroke-width: 2; }
+.hurt__svg .cab { fill: var(--paper); stroke: currentColor; stroke-width: 1.5; animation: cabRide 3.6s var(--ease) infinite; }
+.hurt__svg .cab line { stroke: currentColor; }
+.hurt__svg .fan { transform-box: fill-box; transform-origin: center; animation: spinSlow 2.8s linear infinite; }
+.hurt__svg .fan path { fill: var(--ink); opacity: 0.55; }
+.hurt__svg .heat { fill: none; stroke: var(--amber-ink); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: heatLift 1.8s var(--ease) infinite; }
+.hurt__svg .heat:nth-of-type(2) { animation-delay: 0.2s; }
+.hurt__svg .heat:nth-of-type(3) { animation-delay: 0.4s; }
+.hurt__svg .imp { transform-box: fill-box; transform-origin: center; fill: var(--ink); opacity: 0.7; animation: spinSlow 1.4s linear infinite; }
+.hurt h3 { margin-top: 0.85rem; padding-inline: 0.35rem; font-size: var(--step-0); text-wrap: nowrap; }
+.hurt li > p { margin-top: 0.35rem; padding-inline: 0.35rem; font-size: var(--step--1); }
+.hurt__cost {
+  margin-top: 0.7rem !important;
+  font-family: var(--font-mono); font-weight: 560; font-size: 0.92rem !important;
+  color: var(--amber-ink); letter-spacing: -0.02em;
+}
+.hurt__cost span {
+  display: block; margin-top: 0.15rem;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--faint);
+}
+@keyframes cabRide {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(62px); }
+  55% { transform: translateY(62px); }
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes heatLift {
+  0% { opacity: 0; transform: translateY(4px); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+.also { margin-top: clamp(1.6rem, 3.5vw, 2.4rem); }
+.also__h {
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink);
+  margin: 0 0 0.7rem;
+}
+.also ul {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0;
+  border-top: 1px solid var(--rule);
+}
+@media (min-width: 640px) { .also ul { grid-template-columns: 1fr 1fr; } }
+.also li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--step--1);
+  color: var(--ink);
+}
+.also li span { color: var(--faint); }
+
 /* the night band the guest floors keep running through */
 .fig .nightband { fill: var(--panel-body); }
 .fig .trace-off { stroke: var(--panel-body); }
