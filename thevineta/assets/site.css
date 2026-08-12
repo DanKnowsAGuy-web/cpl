@@ -465,16 +465,7 @@ html.hero-pin .bill .mk-t {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
-  display: flex;
-  flex-direction: column;
-  gap: 0.18rem;
 }
-.analog__pair {
-  color: var(--faint);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-}
-.analog__cap--hot .analog__pair { color: var(--amber-ink); }
 .analog__cap--mid {
   background: var(--paper-2);
   color: var(--faint);
@@ -482,7 +473,7 @@ html.hero-pin .bill .mk-t {
 }
 .analog__cap--hot {
   background: var(--amber-wash);
-  color: var(--faint);
+  color: var(--amber-ink);
 }
 .analog__svg {
   display: block;
