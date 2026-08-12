@@ -196,62 +196,126 @@
       </div>
 
       <p class="analog__lede">When air bubbles enter the pipe, the meter still counts the flow. You pay for air, not water. Distortion works the same way.</p>
-      <figure class="analog" aria-label="Three rows: clean water versus air in the line, clean power versus distorted power, and the hotel machines that take the heat. Both meters read 100 kilowatt-hours.">
-        <div class="analog__grid">
-          <div class="analog__cell">
+      <figure class="analog" aria-label="Clean water and a 100 kilowatt-hour meter on the left. A machine in the middle turns that current jagged. Air in the line and a 115 kilowatt-hour meter on the right.">
+        <div class="analog__board">
+          <div class="analog__head">
             <p class="analog__cap">Clean water</p>
-            <div class="pipe__bore pipe__bore--clean" aria-hidden="true"><span class="pipe__stream"></span></div>
+            <p class="analog__cap analog__cap--mid">The machine</p>
+            <p class="analog__cap analog__cap--hot">Air in the line</p>
           </div>
-          <div class="analog__cell analog__cell--kit">
-            <div class="analog__kit">
-              <svg viewBox="0 0 40 40" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="36"/><line x1="30" y1="4" x2="30" y2="36"/><rect class="cab" x="13" y="8" width="14" height="10"/><line x1="20" y1="4" x2="20" y2="8"/></svg>
-              <span>Elevator motors <small>$50K&ndash;$150K / cab</small></span>
-            </div>
-          </div>
-          <div class="analog__cell analog__cell--hot">
-            <p class="analog__cap">Air in the line</p>
-            <div class="pipe__bore pipe__bore--dirty" aria-hidden="true">
-              <span class="pipe__stream"></span>
-              <i class="blob" style="--i:0"></i>
-              <i class="blob" style="--i:1"></i>
-              <i class="blob" style="--i:2"></i>
-              <i class="blob" style="--i:3"></i>
-              <i class="blob" style="--i:4"></i>
-            </div>
-          </div>
+          <svg class="analog__svg" viewBox="0 0 720 200" aria-hidden="true">
+            <rect class="a-wash a-wash--mid" x="225" y="0" width="270" height="200"/>
+            <rect class="a-wash a-wash--hot" x="495" y="0" width="225" height="200"/>
+            <line class="a-rule" x1="225" y1="0" x2="225" y2="200"/>
+            <line class="a-rule" x1="495" y1="0" x2="495" y2="200"/>
 
-          <div class="analog__cell">
-            <svg class="analog__wave" viewBox="0 0 220 56" aria-hidden="true">
-              <path class="wave-clean" d="M6 28 C 24 8, 42 8, 60 28 S 96 48, 114 28 S 150 8, 168 28 S 204 48, 214 28"/>
-            </svg>
-          </div>
-          <div class="analog__cell analog__cell--kit">
-            <div class="analog__kit">
-              <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="14" width="32" height="16" rx="2"/><circle class="fan" cx="28" cy="22" r="5"/><line x1="8" y1="14" x2="8" y2="10"/><line x1="16" y1="14" x2="16" y2="10"/></svg>
-              <span>PTACs <small>$1,750&ndash;$3,200 / unit</small></span>
-            </div>
-          </div>
-          <div class="analog__cell analog__cell--hot">
-            <svg class="analog__wave" viewBox="0 0 220 56" aria-hidden="true">
-              <path class="wave-dirty" d="M6 28 C 16 10, 24 48, 34 24 S 50 6, 62 38 S 80 50, 92 18 S 110 6, 122 36 S 140 50, 152 20 S 170 8, 182 40 S 200 48, 214 28"/>
-            </svg>
-          </div>
+            <rect class="a-pipe" x="28" y="22" width="170" height="40" rx="20"/>
+            <line class="a-flow" x1="48" y1="42" x2="178" y2="42"/>
+            <polyline class="a-flow" points="166,34 180,42 166,50"/>
 
-          <div class="analog__cell analog__cell--meter">
-            <p class="analog__kwh">100 kWh</p>
-          </div>
-          <div class="analog__cell analog__cell--kit">
-            <div class="analog__kit">
-              <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="14" width="12" height="12" rx="1"/><circle class="imp" cx="26" cy="20" r="8"/><line x1="4" y1="18" x2="0" y2="18"/><line x1="34" y1="20" x2="40" y2="20"/></svg>
-              <span>Pool pumps</span>
+            <rect class="a-pipe" x="522" y="22" width="170" height="40" rx="20"/>
+            <line class="a-flow a-flow--faint" x1="542" y1="42" x2="672" y2="42"/>
+            <polyline class="a-flow a-flow--faint" points="660,34 674,42 660,50"/>
+            <circle class="a-blob b0" cx="548" cy="34" r="5.5"/>
+            <circle class="a-blob b1" cx="572" cy="50" r="4"/>
+            <circle class="a-blob b2" cx="598" cy="36" r="6.5"/>
+            <circle class="a-blob b3" cx="628" cy="48" r="3.5"/>
+            <circle class="a-blob b0" cx="652" cy="33" r="5"/>
+
+            <path class="a-wave a-wave--clean" d="M28 148 C 58 118, 88 118, 118 148 S 178 178, 208 148"/>
+            <path class="a-wave a-wave--dirty" d="M522 148 C 536 118, 546 176, 560 136 S 580 112, 594 168 S 614 180, 628 124 S 648 112, 662 164 S 678 176, 692 148"/>
+
+            <line class="a-in" x1="198" y1="100" x2="318" y2="100"/>
+            <polyline class="a-in" points="308,92 320,100 308,108"/>
+
+            <path class="a-out-glow" d="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
+            <path class="a-out" d="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
+            <circle class="a-spark" r="3.2">
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M412 100 L430 82 L448 122 L466 74 L484 116 L495 100"/>
+            </circle>
+
+            <g class="a-motor">
+              <circle class="a-motor-ring" cx="360" cy="100" r="40"/>
+              <circle class="a-motor-ring" cx="360" cy="100" r="28"/>
+              <circle class="a-motor-hub" cx="360" cy="100" r="8"/>
+              <path class="a-winding" d="M338 80 A28 28 0 0 1 382 80"/>
+              <path class="a-winding" d="M338 120 A28 28 0 0 0 382 120"/>
+              <line class="a-shaft" x1="360" y1="140" x2="360" y2="168"/>
+              <path class="a-heat" d="M346 52 Q350 40 346 30"/>
+              <path class="a-heat" d="M360 48 Q364 36 360 26"/>
+              <path class="a-heat" d="M374 52 Q378 40 374 30"/>
+            </g>
+          </svg>
+          <div class="analog__foot">
+            <div class="analog__meter">
+              <p class="analog__kwh">100 kWh</p>
+              <p class="analog__sub">actual use</p>
             </div>
-          </div>
-          <div class="analog__cell analog__cell--hot analog__cell--meter">
-            <p class="analog__kwh">100 kWh</p>
+            <div class="analog__meter analog__meter--mid" aria-hidden="true"></div>
+            <div class="analog__meter analog__meter--hot">
+              <p class="analog__kwh">115 kWh</p>
+              <p class="analog__sub">you pay for</p>
+            </div>
           </div>
         </div>
-        <figcaption>Fig. 02 &middot; Same meter. Heat and early failure on the right.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
+        <figcaption>Fig. 02 &middot; Same work. Fifteen extra kilowatt-hours on the bill.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
       </figure>
+
+      <p class="hurt__kicker">The three that take it first</p>
+      <ul class="hurt">
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg" viewBox="0 0 120 76">
+              <line class="d soft" x1="40" y1="6" x2="40" y2="70"/>
+              <line class="d soft" x1="80" y1="6" x2="80" y2="70"/>
+              <line class="d" x1="60" y1="6" x2="60" y2="18"/>
+              <g class="cab">
+                <rect x="46" y="16" width="28" height="18" rx="1"/>
+                <line x1="60" y1="16" x2="60" y2="34"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Elevator motors</h3>
+          <p class="hurt__cost">$50K&ndash;$150K <span>per cab</span></p>
+        </li>
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg" viewBox="0 0 120 76">
+              <rect class="d" x="14" y="30" width="92" height="34" rx="2"/>
+              <g class="fan" transform="translate(82 47)">
+                <circle class="d" r="11"/>
+                <path d="M0-3 Q6-12 10-8 Q4-2 0-3Z"/>
+                <path d="M3 0 Q12 6 8 10 Q2 4 3 0Z"/>
+                <path d="M0 3 Q-6 12-10 8 Q-4 2 0 3Z"/>
+                <path d="M-3 0 Q-12-6-8-10 Q-2-4-3 0Z"/>
+              </g>
+              <path class="heat" d="M28 28 Q30 18 28 10"/>
+              <path class="heat" d="M38 26 Q40 16 38 8"/>
+              <path class="heat" d="M48 28 Q50 18 48 10"/>
+              <line class="d soft" x1="22" y1="30" x2="22" y2="22"/>
+              <line class="d soft" x1="34" y1="30" x2="34" y2="22"/>
+            </svg>
+          </div>
+          <h3>PTACs</h3>
+          <p class="hurt__cost">$1,750&ndash;$3,200 <span>per unit</span></p>
+        </li>
+        <li>
+          <div class="hurt__stage" aria-hidden="true">
+            <svg class="hurt__svg" viewBox="0 0 120 76">
+              <path class="d soft" d="M16 58 Q36 48 52 58 T88 58 T120 58"/>
+              <circle class="d" cx="58" cy="34" r="16"/>
+              <circle class="imp" cx="58" cy="34" r="7"/>
+              <line class="d" x1="74" y1="34" x2="96" y2="34"/>
+              <line class="d" x1="20" y1="34" x2="42" y2="34"/>
+              <path class="heat" d="M50 16 Q52 8 50 2"/>
+              <path class="heat" d="M58 14 Q60 6 58 0"/>
+              <path class="heat" d="M66 16 Q68 8 66 2"/>
+            </svg>
+          </div>
+          <h3>Pool pumps</h3>
+          <p class="hurt__cost">$8K&ndash;$25K <span>per pump</span></p>
+        </li>
+      </ul>
       <div class="also">
         <p class="also__h">And the rest of the hotel</p>
         <ul>
@@ -626,7 +690,7 @@
         <li><span class="n">9</span><span><strong>Third-party evaluations and named organizations.</strong> References to NASA, named utilities, named hotels, and other organizations reflect publicly available reports and evaluations concerning the underlying technologies that Energy Plus deploys. They do not refer to Energy Plus or CPL, and do not constitute or imply endorsement, sponsorship, certification, or affiliation. They are not claims about The Vineta.</span></li>
         <li><span class="n">12</span><span><strong>Equipment life, maintenance, and guest comfort.</strong> Statements regarding extended equipment life, reduced maintenance, improved humidity control, temperature stability, guest comfort, and single-application or long-lasting benefits assume proper installation, operation, and maintenance. They are not a warranty, and actual outcomes will vary. Nothing here replaces your own building monitoring, life-safety systems, or regulatory obligations.</span></li>
         <li><span class="n">15</span><span><strong>FPL demand rates for this address.</strong> The $12.70/kW demand charge, $33.71 customer charge, and per-kW riders cited on this page are taken from Florida Power & Light's published Business rate schedule for General Service Demand (GSD-1), effective January 2026. FPL measures demand as the highest 30-minute interval in the billing period. A 41-key hotel at 363 Cocoanut Row, Palm Beach, sits in FPL territory and is billed on a commercial demand schedule; GSD-1 (25–499 kW) is the schedule used here as the published rate for a hotel of this size. The Exam confirms the actual tariff and the actual billed kW from this address's interval data. The statement that demand is often a third or more of a hotel electric bill is an industry-typical range, not a reading of The Vineta's bills. No dollar total, billed-kW figure, or monthly spend on this page is taken from The Vineta's FPL account. The pool photograph is published imagery of The Vineta Hotel. The Vineta, Oetker Hotels, and related marks are the property of their owners.</span></li>
-        <li><span class="n">16</span><span><strong>Hotel equipment costs.</strong> Replacement and modernization ranges for PTACs, elevator cabs, and chiller emergency rentals are industry-typical figures used in the Energy Plus hotel estimator. They are not quotes for The Vineta and are not taken from this hotel's vendor contracts. Actual cost depends on the unit, the building, and the market at the time of replacement.</span></li>
+        <li><span class="n">16</span><span><strong>Hotel equipment costs.</strong> Replacement and modernization ranges for PTACs, elevator cabs, pool pumps, and chiller emergency rentals are industry-typical figures used in the Energy Plus hotel estimator. They are not quotes for The Vineta and are not taken from this hotel's vendor contracts. Actual cost depends on the unit, the building, and the market at the time of replacement. The 100 kWh / 115 kWh pair in Fig. 02 is an illustration of the estimator's hotel floor &mdash; about 14 to 15 percent extra on the meter from distortion. It is not a reading of The Vineta's bills.</span></li>
       </ul>
     </div>
 
