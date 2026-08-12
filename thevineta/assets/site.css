@@ -347,6 +347,24 @@ html.hero-pin .bill .mk-t {
 }
 .readout small strong { color: var(--panel-ink); }
 
+/* HVAC pair: waste off, comfort stays */
+.pair {
+  margin-top: clamp(1.8rem, 4vw, 2.8rem);
+  display: grid;
+  gap: 1px;
+  background: var(--graphite-rule);
+  border: 1px solid var(--graphite-rule);
+}
+@media (min-width: 640px) { .pair { grid-template-columns: 1fr 1fr; } }
+.pair article { background: var(--graphite-2); padding: 1.3rem 1.35rem 1.4rem; }
+.pair__fig {
+  font-family: var(--font-mono); font-weight: 500; line-height: 0.95;
+  font-size: clamp(2.4rem, 1.6rem + 3.5vw, 3.8rem);
+  color: var(--amber); letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+}
+.pair__fig--ink { color: var(--panel-ink); font-size: clamp(2rem, 1.4rem + 2.6vw, 3rem); }
+.pair__label { margin-top: 0.75rem; font-size: var(--step--1); color: var(--panel-body); max-width: 28ch; line-height: 1.45; }
+
 /* the signature beat: the building that never closes.
    Same graphite instrument surface as the money readout, but the figure is
    time, not money — so it is set in neutral panel ink, NOT amber (amber stays

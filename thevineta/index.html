@@ -160,55 +160,16 @@
     <div class="wrap beat__narrow">
       <h2 id="money-h">HVAC is your most expensive bill.</h2>
       <p class="lead lead--dark">It is also where the most waste sits. One way we cut the peak is by pulling that lever.</p>
-      <p class="readout">15&ndash;30%<small><strong>less HVAC energy</strong> on the systems you already run.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></small></p>
-      <figure class="fig" aria-label="Bar chart: energy to hold a room at 72, today versus after the retrofit">
-        <svg viewBox="0 0 640 300" role="img" aria-hidden="true">
-          <defs>
-            <pattern id="hatch-comfort" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <text class="lbl lbl--ink" x="48" y="36">energy to hold the room at 72&deg;</text>
-          <rect class="d" pathLength="1" style="--d:0" x="170" y="60" width="110" height="180"/>
-          <rect class="fade" style="--o:0.4" x="170" y="60" width="110" height="100" fill="url(#hatch-comfort)"/>
-          <text class="lbl" x="225" y="50" text-anchor="middle">does no cooling</text>
-          <rect class="d" pathLength="1" style="--d:1" x="360" y="160" width="110" height="80"/>
-          <line class="dash fade" x1="170" y1="160" x2="490" y2="160"/>
-          <text class="lbl" x="498" y="164">the cooling you actually get</text>
-          <line class="d soft" pathLength="1" style="--d:2" x1="48" y1="250" x2="592" y2="250"/>
-          <text class="lbl" x="225" y="272" text-anchor="middle">today</text>
-          <text class="lbl" x="415" y="272" text-anchor="middle">after the retrofit</text>
-          <text class="lbl soft-t" x="320" y="292" text-anchor="middle">same 72&deg; &middot; new or old equipment</text>
-        </svg>
-        <figcaption>Fig. 02 &middot; Same 72&deg;, a smaller bill</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="beat beat--rule" id="always" aria-labelledby="always-h">
-    <div class="wrap beat__narrow">
-      <h2 id="always-h">The hotel never closes.</h2>
-      <p class="lead">At 2 a.m. the keys are still at 72. The pool is still moving. Demand runs all year.</p>
-      <figure class="fig" aria-label="Diagram: public spaces wind down overnight while guest floors and the pool loop never drop">
-        <svg viewBox="0 0 640 300" role="img" aria-hidden="true">
-          <rect class="nightband fade" style="--o:0.07" x="300" y="44" width="170" height="192"/>
-          <line class="dash" x1="300" y1="52" x2="300" y2="236"/>
-          <line class="dash" x1="470" y1="52" x2="470" y2="236"/>
-          <path class="d trace-off" pathLength="1" style="--d:1" d="M40 100 L84 94 L128 102 L172 96 L216 104 L260 98 L300 100 L322 140 L344 186 L366 212 L404 216 L440 214 L470 210 L492 150 L514 110 L540 100 L572 104 L604 100"/>
-          <path class="d" pathLength="1" style="--d:0" d="M40 76 L92 72 L120 80 L172 74 L200 80 L252 73 L280 79 L332 75 L360 80 L412 74 L440 79 L492 74 L520 80 L572 74 L604 77"/>
-          <line class="d soft" pathLength="1" style="--d:2" x1="40" y1="236" x2="604" y2="236"/>
-          <text class="lbl lbl--ink" x="604" y="64" text-anchor="end">keys + pool loop &middot; never drop</text>
-          <text class="lbl" x="385" y="198" text-anchor="middle">Coco and The Bar wind down</text>
-          <text class="lbl" x="300" y="256" text-anchor="middle">midnight</text>
-          <text class="lbl" x="470" y="256" text-anchor="middle">6 a.m.</text>
-          <text class="lbl soft-t" x="322" y="288" text-anchor="middle">one hotel &middot; one day &middot; the rooms and the water never rest</text>
-        </svg>
-        <figcaption>Fig. 03 &middot; The rooms and the water never rest</figcaption>
-      </figure>
-      <figure class="plate">
-        <div class="plate__frame"><img class="js-reveal" src="assets/img/always-night.jpg" alt="A historic Palm Beach hotel after midnight, a sparse grid of lit guest-room windows" loading="lazy"></div>
-        <figcaption>Survey plate 1 &middot; After midnight, every lit window is a room still running</figcaption>
-      </figure>
+      <div class="pair" role="list">
+        <article role="listitem">
+          <p class="pair__fig">15&ndash;48%</p>
+          <p class="pair__label">less HVAC energy, depending on the system.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+        </article>
+        <article role="listitem">
+          <p class="pair__fig pair__fig--ink">Same 72&deg;</p>
+          <p class="pair__label">The waste comes off. The comfort stays.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -254,7 +215,7 @@
             <p class="pipe__cap"><strong>Air in the line.</strong> The pump works twice. The pipe runs hot.</p>
           </div>
         </div>
-        <figcaption>Fig. 04 &middot; Distortion is air in the pipe. Power works the same way.</figcaption>
+        <figcaption>Fig. 02 &middot; Distortion is air in the pipe. Power works the same way.</figcaption>
       </figure>
 
       <h3 class="hurt__h">What distortion hits first in a hotel.</h3>
@@ -443,7 +404,7 @@
           <text class="lbl" x="479" y="194" text-anchor="middle">7 days &middot; after</text>
           <text class="lbl soft-t" x="320" y="216" text-anchor="middle">per unit &middot; witnessed by anyone you choose</text>
         </svg>
-        <figcaption>Fig. 05 &middot; The Exam's proof window</figcaption>
+        <figcaption>Fig. 03 &middot; The Exam's proof window</figcaption>
       </figure>
       <div class="floor">
         <h3>The Floor</h3>
@@ -634,10 +595,6 @@
     <div class="wrap beat__narrow">
       <h2 id="stakes-h">A room that cannot hold 72 is a lost night.</h2>
       <p class="lead">At this ADR, guest experience is the P&L. The same waste that pads the bill is what retires PTACs, VRFs, hoods, and pool equipment early.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup> <strong>We get more years out of what you have. When a unit is actually done, we replace it with the gold standard.</strong></p>
-      <figure class="plate">
-        <div class="plate__frame"><img class="js-reveal" src="assets/img/courtyard.jpg" alt="An open Palm Beach hotel courtyard after lunch service" loading="lazy"></div>
-        <figcaption>Survey plate 2 &middot; Coco, the courtyard, the second climate &mdash; still working after the dining room has gone dark</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -686,7 +643,7 @@
     <div class="foot__notes" id="notes">
       <p><strong>How to read this page.</strong> Christ Power and Light (CPL) delivers this program in partnership with Energy Plus, an independent energy solutions partner. We do not manufacture equipment. We diagnose this hotel and procure, size, and integrate the right technologies from our stack for this specific building. The numbered notes below apply to the marked figures and statements throughout this page.</p>
       <ul>
-        <li><span class="n">1</span><span><strong>Savings and performance figures.</strong> All savings, bill-reduction, equipment-life, maintenance, and payback figures shown (including the heating-and-cooling savings ranges such as 15 to 30% of HVAC energy) are illustrative estimates or results achieved at specific facilities under their own conditions. They are not predictions or guarantees of results at The Vineta. Actual results depend on the building, climate, occupancy, equipment condition, and utility rates, which is exactly why we prove savings on site before you commit. Modeled numbers are directional estimates, not quotes.</span></li>
+        <li><span class="n">1</span><span><strong>Savings and performance figures.</strong> All savings, bill-reduction, equipment-life, maintenance, and payback figures shown (including the heating-and-cooling savings range of 15 to 48% of HVAC energy, which varies by system type) are illustrative estimates or results achieved at specific facilities under their own conditions. They are not predictions or guarantees of results at The Vineta. Actual results depend on the building, climate, occupancy, equipment condition, and utility rates, which is exactly why we prove savings on site before you commit. Modeled numbers are directional estimates, not quotes.</span></li>
         <li><span class="n">2</span><span><strong>Program terms and eligibility.</strong> Our done-for-you program, including negotiation, pricing, and contract terms, is offered case-by-case. Properties that do not qualify for the done-for-you program may instead be offered self-directed options, which carry different terms, pricing, and responsibilities. "No cost," "the diagnosis is on us," and "nothing owed" describe the diagnosis and pilot phase for qualifying properties; they do not describe the cost of any installed solution. Eligibility, scheduling, and availability are determined during the application and diagnosis process.</span></li>
         <li><span class="n">3</span><span><strong>Tax incentives.</strong> Any tax figures shown are potential amounts based on current federal rules and assumptions; they are not tax advice. Actual deductions depend on the building, the work performed, and your tax situation. Consult a qualified tax advisor.</span></li>
         <li><span class="n">4</span><span><strong>Utility and incentive programs.</strong> Utility-program coverage varies by state, utility, and program, and is subject to program availability, funding, and qualification. Amounts shown are illustrative and are not guaranteed.</span></li>
@@ -706,7 +663,7 @@
         <h4>1. General</h4>
         <p>This content is provided for general informational purposes only. It is not an offer, warranty, guarantee, or professional advice. All figures are estimates, are illustrative, and are subject to change without notice. The only binding commitments between you and Energy Plus or CPL are those set out in a signed written agreement. Results vary by facility.</p>
         <h4>2. Performance figures</h4>
-        <p>Stated efficiency and savings ranges, including but not limited to 15 to 30 percent, 30 to 50 percent, up to 36 percent, an IEER of 31, and a COP of 6, reflect results observed under specific conditions or reported in specific studies. Where a range is quoted for combined measures, the low end reflects the outcomes we treat as the planning floor and the high end requires per-site modeling. Actual performance depends on factors including equipment type, equipment age, baseline efficiency, climate, occupancy, usage patterns, maintenance, and installation quality. Your actual results may differ from, and may fall below, the ranges shown.</p>
+        <p>Stated efficiency and savings ranges, including but not limited to 15 to 48 percent of HVAC energy depending on the system, 30 to 50 percent, up to 36 percent, an IEER of 31, and a COP of 6, reflect results observed under specific conditions or reported in specific studies. Where a range is quoted for combined measures, the low end reflects the outcomes we treat as the planning floor and the high end requires per-site modeling. Actual performance depends on factors including equipment type, equipment age, baseline efficiency, climate, occupancy, usage patterns, maintenance, and installation quality. Your actual results may differ from, and may fall below, the ranges shown.</p>
         <h4>3. System and technical statements</h4>
         <p>Descriptions of how heating and cooling systems operate, including any statement that the compressor accounts for a majority or a stated share of system energy use, are typical or representative rather than universal. Actual values vary by system design, configuration, and operation. PTACs, VRFs, kitchen hoods, and pool equipment describe the classes of equipment this hotel runs.</p>
         <h4>4. Savings and return on investment</h4>
