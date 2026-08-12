@@ -170,7 +170,8 @@ sup.fn a { color: inherit; text-decoration: none; }
 /* HERO-B: the specimen bill floats over a darkened, working-hotel photo. Scoped to
    .hero so the close section's media/scrim are untouched; inert until the hero markup
    carries a .hero__media element. */
-.hero .hero__media img { filter: grayscale(1) contrast(1.05) brightness(0.55); }
+.hero .hero__media img { filter: grayscale(1) contrast(1.05) brightness(0.55); object-position: 50% 72%; }
+.close .close__media img { object-position: 50% 28%; }
 .hero .hero__scrim {
   background:
     linear-gradient(to right, oklch(0.13 0.006 260 / 0.93) 0%, oklch(0.13 0.006 260 / 0.55) 42%, oklch(0.13 0.006 260 / 0.52) 70%, oklch(0.13 0.006 260 / 0.85) 100%),
