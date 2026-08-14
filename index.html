@@ -1,1 +1,688 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>CPL</title></head><body></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>CPL: energy savings proven on your own building</title>
+<meta name="description" content="We find the waste in your commercial building, prove the savings on your own equipment, and install nothing until the number is real.">
+<meta property="og:title" content="CPL: energy savings proven on your own building">
+<meta property="og:description" content="We find the waste in your commercial building, prove the savings on your own equipment, and install nothing until the number is real.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fbfbfa">
+<link rel="icon" href="assets/img/cpl-logo-ink.png">
+<link rel="stylesheet" href="assets/fonts/report-fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ---- CPL page-local fixes ---- */
+
+/* the shared header filter was built for the light Energy Plus logo; the CPL
+   mark is already dark ink, so show it as-is on the solid header and force it
+   white over the dark hero (is-clear) */
+.head .head__mark img{ filter:none; }
+.head.is-clear .head__mark img{ filter: brightness(0) invert(1); }
+
+/* SMS reveal -> centered popover, portaled to <body> by the CPL script; styled
+   self-contained so it reads the same regardless of which section it came from */
+.sms.is-open{ position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+  z-index:90; margin:0; width:min(31rem, calc(100vw - 2rem)); max-width:none;
+  background:oklch(0.2 0.008 260 / .99); border:1px solid var(--graphite-rule); border-radius:8px;
+  padding:1.15rem 1.2rem 1.1rem; box-shadow:0 24px 70px -18px rgba(0,0,0,.75); color:var(--panel-body); }
+.sms.is-open .sms__to, .sms.is-open .sms__hint{ color:oklch(0.66 0.006 260); }
+.sms.is-open textarea{ background:var(--graphite); color:var(--panel-body); border:1px solid var(--graphite-rule); }
+.sms.is-open .btn.js-sms-send{ background:var(--panel-ink); color:var(--graphite); border-color:var(--panel-ink); }
+.sms.is-open .sms__email{ color:var(--panel-body); }
+.sms-backdrop{ position:fixed; inset:0; z-index:80; background:oklch(0.12 0.006 260 / .66); backdrop-filter:blur(2px); }
+.sms-backdrop[hidden]{ display:none; }
+.sms__close{ position:absolute; top:.35rem; right:.45rem; width:1.9rem; height:1.9rem; display:grid; place-items:center;
+  border:0; border-radius:50%; cursor:pointer; background:transparent; color:inherit; font-size:1.4rem; line-height:1; opacity:.68; }
+.sms__close:hover{ opacity:1; }
+@media (prefers-reduced-motion: reduce){ .sms-backdrop{ backdrop-filter:none; } }
+
+.sms__email{ display:inline-block; margin-left:.7rem; color:inherit; opacity:.82; font-size:.82rem; text-decoration:underline; text-underline-offset:2px; }
+.sms__email:hover{ opacity:1; }
+
+/* team: always open (no accordion), larger portrait cards on the dark close section.
+   4:5 portrait, top-anchored so heads never chop. */
+.team-block{ margin-top: clamp(2rem,4vw,3rem); }
+.team-block__label{ font-family:var(--font-mono); font-size:.72rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:oklch(0.7 0.006 260); margin:0 0 clamp(1rem,2.2vw,1.5rem); }
+.close .team{ display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:clamp(1.4rem,3vw,2.2rem); max-width:840px; }
+.close .person{ display:block; }
+.close .person img{ width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center top; border-radius:6px; margin-bottom:.9rem; }
+.close .person h3{ font-size:var(--step-1); color:var(--panel-ink); }
+.close .person__role{ color:var(--amber); }
+
+/* scan-to-text-Ron QR shown INSIDE the Text Ron popover on desktop (where the
+   sms: Send button can't work); hidden on mobile, where tapping Send does work. */
+.sms__qr{ display:none; }
+@media (min-width:760px){
+  .sms__qr{ display:flex; align-items:center; gap:1rem; margin-top:.9rem; flex-basis:100%; }
+  .sms__send, .sms__hint--mobile{ display:none; }
+}
+.sms__qr img{ width:132px; height:132px; background:#fff; padding:8px; border-radius:8px; flex:none; }
+.sms__qr-cap{ margin:0; font-size:.82rem; line-height:1.45; color:var(--panel-body); }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="head" id="head">
+  <div class="wrap head__in">
+    <a class="head__mark" href="#top" aria-label="CPL, home"><img src="assets/img/cpl-logo-ink.png" alt="CPL &middot; Christ Power &amp; Light" width="84" height="36"></a>
+    <nav class="head__nav" aria-label="Primary">
+      <a href="#plan">The plan</a>
+      <a href="#proof">Proof</a>
+      <a href="how-it-works.html">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO · the exhibit: a bill, read the way we read it -->
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap hero__in hero__grid">
+      <div class="hero__copy">
+        <h1 id="hero-h">Stop paying for wasted energy.</h1>
+        <p class="hero__lede">We find the waste in your commercial building, prove the savings on your own equipment, and install nothing until the number is real.</p>
+        <div class="cta" data-cta>
+          <button type="button" class="btn btn--lg js-sms-toggle" aria-expanded="false">Text Ron</button>
+        </div>
+        <div class="sms" role="group" aria-label="Text Ron">
+          <p class="sms__to">To Ron &middot; (561) 410-4253</p>
+          <textarea rows="4" spellcheck="false" aria-label="Message to Ron">Hey Ron, I run a commercial building and I'd like to see what real energy savings could look like at my property, without the sales song and dance. What does it take to qualify?</textarea>
+          <div class="sms__foot">
+            <span class="sms__hint sms__hint--mobile">Opens in your messages, ready to send.</span>
+            <a class="btn btn--sm js-sms-send sms__send" href="#" data-phone="+15614104253">Send message</a> <a class="sms__email" href="mailto:ron@cpl.vision?subject=Energy%20savings%20at%20my%20building&body=Hey%20Ron%2C%20I%20run%20a%20commercial%20building%20and%20I%27d%20like%20to%20see%20what%20real%20energy%20savings%20could%20look%20like%20at%20my%20property%2C%20without%20the%20sales%20song%20and%20dance.%20What%20does%20it%20take%20to%20qualify%3F">Email Ron instead</a>
+            <div class="sms__qr"><img src="assets/img/qr-text-ron.svg" alt="Scan to text Ron" width="150" height="150"><p class="sms__qr-cap">On a computer? Scan this with your phone &mdash; Ron&rsquo;s number and message fill in automatically.</p></div>
+          </div>
+        </div>
+      </div>
+      <figure class="bill">
+        <svg viewBox="0 0 460 592" role="img" aria-labelledby="bill-t">
+          <title id="bill-t">A typical commercial electric bill, marked up the way we read it: the demand charge is set by your worst 15 minutes of the month, roughly 30% of the energy charge did nothing, and the 15-minute interval detail is what a real quote is built from.</title>
+          <rect class="paper" x="14" y="8" width="432" height="576"/>
+          <text class="bt" x="40" y="56">COMMERCIAL ELECTRIC SERVICE</text>
+          <text class="meta" x="40" y="74">STATEMENT OF ACCOUNT</text>
+          <rect class="tag" x="344" y="40" width="76" height="22"/>
+          <text class="meta" x="382" y="54.5" text-anchor="middle">SPECIMEN</text>
+          <line class="rule" x1="40" y1="92" x2="420" y2="92"/>
+          <text class="meta" x="40" y="114">ACCOUNT &middot;&middot;&middot;&middot;4471</text>
+          <text class="meta" x="240" y="114">RATE SCHEDULE &middot; GS-2</text>
+          <text class="meta" x="40" y="132">PERIOD &middot; JUL 01&ndash;JUL 31</text>
+          <text class="meta" x="240" y="132">METER &middot; 2K-88146</text>
+          <line class="rule" x1="40" y1="150" x2="420" y2="150"/>
+          <text class="row" x="40" y="180">Customer charge</text>
+          <text class="amt" x="420" y="180" text-anchor="end">88.00</text>
+          <text class="row" x="40" y="212">Energy charge &middot; 148,320 kWh</text>
+          <text class="amt" x="420" y="212" text-anchor="end">12,458.88</text>
+          <text class="row" x="40" y="268">Fuel cost adjustment</text>
+          <text class="amt" x="420" y="268" text-anchor="end">1,036.24</text>
+          <text class="row" x="40" y="300">Demand charge &middot; 412 kW</text>
+          <text class="amt" x="420" y="300" text-anchor="end">7,580.80</text>
+          <text class="row" x="40" y="360">Power factor adjustment</text>
+          <text class="amt" x="420" y="360" text-anchor="end">312.40</text>
+          <text class="row" x="40" y="392">Taxes and riders</text>
+          <text class="amt" x="420" y="392" text-anchor="end">1,462.11</text>
+          <line class="rule rule--ink" x1="40" y1="416" x2="420" y2="416"/>
+          <text class="bt" x="40" y="448">TOTAL DUE</text>
+          <text class="amt amt--total" x="420" y="449" text-anchor="end">$22,938.43</text>
+          <line class="rule" x1="40" y1="472" x2="420" y2="472"/>
+          <text class="meta" x="40" y="498">INTERVAL DATA ON FILE &middot; 2,976 READINGS &middot; 15-MIN RESOLUTION</text>
+          <rect class="fine" x="40" y="546" width="340" height="3"/>
+          <rect class="fine" x="40" y="556" width="310" height="3"/>
+          <rect class="fine" x="40" y="566" width="180" height="3"/>
+          <!-- the pen · mark 1: the energy charge -->
+          <path class="mk" pathLength="1" style="--d:0" d="M336 221 C 358 226, 398 223, 423 219"/>
+          <path class="mk" pathLength="1" style="--d:0" d="M196 233 C 248 240, 296 233, 328 224 M328 224 l -8.5 -1.5 M328 224 l -3.5 7.5"/>
+          <text class="mk-t" x="40" y="240" style="--d:0" transform="rotate(-2 40 240)">~30% OF THIS DID NOTHING</text>
+          <!-- mark 2: the demand charge -->
+          <path class="mk" pathLength="1" style="--d:1" d="M352 296 C 350 281, 428 279, 430 294 C 432 310, 353 313, 351 298 C 350 287, 370 283, 392 282"/>
+          <path class="mk" pathLength="1" style="--d:1" d="M282 322 C 310 320, 332 314, 347 306 M347 306 l -8.5 0.5 M347 306 l -4.5 7"/>
+          <text class="mk-t" x="40" y="330" style="--d:1" transform="rotate(-2 40 330)">SET BY YOUR WORST 15 MINUTES OF THE MONTH</text>
+          <!-- mark 3: the interval detail -->
+          <path class="mk" pathLength="1" style="--d:2" d="M230 505 C 258 510, 300 506, 334 503"/>
+          <text class="mk-t" x="230" y="526" style="--d:2" transform="rotate(-1.5 230 526)">THE DETAIL WE QUOTE FROM</text>
+        </svg>
+        <figcaption class="bill__cap">Exhibit A &middot; a commercial bill, read the way we read it. Figures illustrative.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- BEAT 1 · THE PROBLEM -->
+  <section class="beat" id="problem" aria-labelledby="problem-h">
+    <div class="wrap beat__grid">
+      <p class="monument" aria-hidden="true">~30<span class="monument__unit">%</span></p>
+      <div class="beat__copy">
+        <h2 id="problem-h">About a third of the energy you buy does nothing.</h2>
+        <p class="lead">That's the EPA's figure for the average commercial building.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup> <strong>Most buildings have never had anyone qualified find out where theirs goes.</strong></p>
+        <p>You've been pitched savings before, by someone selling a single product, with a payback chart from a different building. Saying no was the right call.</p>
+        <p>But the bill keeps arriving, and no building should pay, month after month, for energy that does nothing.</p>
+        <details class="gate">
+          <summary><span class="plus" aria-hidden="true">+</span>See why those pitches fail</summary>
+          <div class="gate__body">
+            <p>Most energy vendors carry one product, so every building gets the same answer. The case study they show you is a different building's prescription. Nobody in that model is paid to measure your building first, so the waste survives the upgrade.</p>
+            <p>That is the entire difference here: the measurement comes first, and the fix is chosen to match what it finds, from more than four dozen technologies.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="fig" aria-label="Diagram: of the energy an average commercial building buys, roughly a third does no work">
+        <svg viewBox="0 0 640 150" role="img" aria-hidden="true">
+          <defs>
+            <pattern id="hatch-waste" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect class="fade" style="--o:0.4" x="440" y="58" width="178" height="44" fill="url(#hatch-waste)"/>
+          <rect class="d" pathLength="1" x="22" y="58" width="596" height="44" rx="2" style="--d:0"/>
+          <line class="d" pathLength="1" x1="440" y1="58" x2="440" y2="102" style="--d:1"/>
+          <path class="d soft" pathLength="1" d="M440 44 L440 34 L618 34 L618 44" style="--d:2"/>
+          <text class="lbl lbl--ink" x="529" y="22" text-anchor="middle">~30% · does nothing</text>
+          <text class="lbl" x="231" y="130" text-anchor="middle">energy doing work</text>
+          <text class="lbl" x="529" y="130" text-anchor="middle">paid for anyway</text>
+        </svg>
+        <figcaption>Fig. 01 &middot; A dollar of commercial energy, at the EPA's average</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- THE LISTEN TEST · the waste, out loud -->
+  <section class="beat beat--rule" id="listen" aria-labelledby="listen-h">
+    <div class="wrap beat__narrow">
+      <h2 id="listen-h">You can hear it.</h2>
+      <p class="lead">The compressor is the loud hum on your roof, and it eats more than 80% of a cooling unit's electricity. A healthy one cycles: hum, rest, hum, rest. <strong>A saturated one hums straight through, buying electricity that makes nothing colder.</strong></p>
+      <div class="listen">
+        <div class="listen__card" data-card="healthy">
+          <button type="button" class="listen__btn" data-listen="healthy" aria-pressed="false" aria-label="Play the sound of a healthy unit">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            <svg class="i-stop" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1"/></svg>
+          </button>
+          <div class="listen__info">
+            <h3>A healthy unit</h3>
+            <p>Hum, rest, hum. The rest is the sound of money staying yours.</p>
+          </div>
+          <div class="listen__meter" aria-hidden="true"></div>
+        </div>
+        <div class="listen__card" data-card="wasteful">
+          <button type="button" class="listen__btn" data-listen="wasteful" aria-pressed="false" aria-label="Play the sound of a unit that never rests">
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            <svg class="i-stop" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="1"/></svg>
+          </button>
+          <div class="listen__info">
+            <h3>A unit paying for nothing</h3>
+            <p>The hum never stops. That's the waste, out loud.</p>
+          </div>
+          <div class="listen__meter" aria-hidden="true"></div>
+        </div>
+      </div>
+      <p class="quiet">Simulated audio, tuned to the pattern, not a recording. The real test costs five minutes standing next to your own unit &mdash; it's on page 2 of the worksheet, further down this page.</p>
+    </div>
+  </section>
+
+  <!-- BEAT 2 · THE GUIDE · the diagnostician's dossier -->
+  <section class="beat beat--rule" id="guide" aria-labelledby="guide-h">
+    <div class="wrap beat__narrow">
+      <h2 id="guide-h">We start with a diagnosis, not a product.</h2>
+      <p class="lead">This company started from the same frustration: savings that only ever existed in the brochure. <strong>We didn't want to guess either, so we went and got the engineer national labs hired when a measurement had to be right the first time.</strong></p>
+    </div>
+    <div class="wrap">
+      <div class="dossier">
+        <figure class="dossier__photo">
+          <div class="plate__frame plate__frame--portrait"><img src="assets/img/cliff-lab.jpg" alt="Cliff Suljak, Chief Materials Engineer, standing in a materials testing laboratory" loading="lazy"></div>
+          <figcaption class="dossier__cap">Personnel file &middot; C. Suljak &middot; Chief Materials Engineer</figcaption>
+        </figure>
+        <div class="dossier__body">
+          <h3 class="dossier__title">Meet your diagnostician.</h3>
+          <p class="dossier__lede">When the Department of Energy and the Department of Defense needed measurements right the first time, Sandia National Laboratories didn't put the contract out to bid. <strong>They handed it to Cliff Suljak.</strong><sup class="fn"><a href="#notes" aria-label="See note 5">5</a></sup></p>
+          <ul class="creds" aria-label="Career credentials">
+            <li><span class="creds__fig">Sole source</span><span class="creds__desc">Sandia National Laboratories: directed a 22-engineer team across four DOE and DOD facilities</span></li>
+            <li><span class="creds__fig">Billions</span><span class="creds__desc">in projects overseen; the $600M Salt River Project quality program was one of them</span></li>
+            <li><span class="creds__fig">ASTM</span><span class="creds__desc">eight years co-writing the national standards other engineers are tested against</span></li>
+            <li><span class="creds__fig">3 emirates</span><span class="creds__desc">called in to assess national grid reliability for Dubai, Abu Dhabi, and Sharjah</span></li>
+          </ul>
+          <p class="dossier__why">Energy savings is a measurement problem before it is an equipment problem. <strong>He runs the measurement on your building, on your side of the table.</strong></p>
+        </div>
+      </div>
+      <div class="workfile" data-workfile>
+        <p class="workfile__label">Selected work &middot; file <span data-wf-n>1</span> of 5 &middot; hover to hold</p>
+        <div class="workfile__view">
+          <div class="workfile__track" data-wf-track>
+            <article class="workfile__card">
+              <p class="workfile__tag">Sandia National Laboratories &middot; DOE / DOD</p>
+              <h4>Sole-source. Five years. Twenty-two engineers. Four national facilities.</h4>
+              <p>Sandia didn't put this contract out to bid. They awarded it directly to Cliff, then watched him assemble and direct a 22-person engineering team across facilities in Albuquerque, Livermore, Tonopah, and Kauai: hundreds of task orders completed under Star Wars Program infrastructure. When the DOE and DOD need structural integrity assured, they don't shop around.</p>
+            </article>
+            <article class="workfile__card">
+              <p class="workfile__tag">Salt River Project &middot; Arizona</p>
+              <h4>He built the quality control system from scratch. The industry copied it.</h4>
+              <p>As Manager of the Materials and Quality Services Division, Cliff created a complete quality control infrastructure for one of the Southwest's largest utilities: metallurgical lab, nondestructive testing, failure analysis, predictive vibration monitoring. The innovations he introduced on the $600M program were later adopted by utilities across the country.</p>
+            </article>
+            <article class="workfile__card">
+              <p class="workfile__tag">York International &middot; Los Angeles County Courts</p>
+              <h4>Northridge earthquake. County engineers on the other side. He won.</h4>
+              <p>After the Northridge earthquake threatened the world's largest thermal storage system at the LA County Courts facility, York International hired Cliff on a sole-source basis to fix it. He performed the seismic stability analysis, delivered litigation testimony against the county's own engineers and consultants, and prevailed. Then he designed, fabricated, and personally oversaw installation of the custom seismic restraint system.</p>
+            </article>
+            <article class="workfile__card">
+              <p class="workfile__tag">UAE National Power Grid &middot; Dubai &middot; Abu Dhabi &middot; Sharjah</p>
+              <h4>Three emirates. One grid. They called him in to assess all of it.</h4>
+              <p>What began as a reactive power loss engagement across Dubai, Abu Dhabi, and Sharjah grew into a full operational assessment of the UAE's power grid. Cliff mobilized in-country for extended periods, consulting directly to utility authorities on grid reliability. When a nation's infrastructure is the project, the margin for error is zero.</p>
+            </article>
+            <article class="workfile__card">
+              <p class="workfile__tag">ASTM &middot; Standards Committee &middot; 8 years</p>
+              <h4>Eight years helping write the standards everyone else is tested against.</h4>
+              <p>For eight years Cliff served on the ASTM committee developing test methods for leading-edge materials diagnostics: advanced composites and ultra-high-strength metals in extreme temperature environments. The methods he helped develop were adopted as national industry acceptance criteria for utility procurement.</p>
+            </article>
+          </div>
+          <button type="button" class="workfile__arrow workfile__arrow--prev" data-wf-prev aria-label="Previous project">&larr;</button>
+          <button type="button" class="workfile__arrow workfile__arrow--next" data-wf-next aria-label="Next project">&rarr;</button>
+        </div>
+        <div class="workfile__dots" data-wf-dots aria-label="Selected work navigation"></div>
+      </div>
+      <p class="quiet">Prefer to watch? <a class="textlink" href="#film">The whole method in a 6-minute film, below</a></p>
+    </div>
+  </section>
+
+  <!-- BEAT 3 · THE PLAN -->
+  <section class="beat beat--rule" id="plan" aria-labelledby="plan-h">
+    <div class="wrap beat__narrow">
+      <h2 id="plan-h">Three steps. The first two cost you nothing.</h2>
+      <p class="lead">The first two steps are what we call <strong>The Exam:</strong> a diagnosis of your bill and your building, proven before anything is proposed.</p>
+      <ol class="steps">
+        <li>
+          <h3>Send a year of bills and a few photos.</h3>
+          <p>Your last 12 months of electric bills, and every page of them, not the summary. <strong>The full year shows your seasons, and the detail pages carry the rate schedule, demand charges, and 15-minute usage a real quote is built from.</strong> Add phone photos of the nameplate on each HVAC unit. Still one email, and no site visit to start.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+            <p class="quiet">Two shortcuts, either works: most utility portals export all 12 months in one download, or a simple authorization lets us pull your usage data from the utility directly.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+        </li>
+        <li>
+          <h3>We prove your number on your own building.</h3>
+          <p>Seven days of metering before the work, seven days after, on your own equipment, <strong>witnessed by anyone you choose:</strong> your engineer, your accountant, your sustainability reviewer. Recognized protocols on request.<sup class="fn"><a href="#notes" aria-label="See note 8">8</a></sup></p>
+        </li>
+        <li>
+          <h3>You decide.</h3>
+          <p>Keep what pays for itself, <strong>or walk away owing nothing.</strong><sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+        </li>
+      </ol>
+      <figure class="fig" aria-label="Diagram of the proof window: seven days metered before the install, seven after, and the verified difference between the two levels">
+        <svg viewBox="0 0 640 224" role="img" aria-hidden="true">
+          <line class="d soft" pathLength="1" x1="24" y1="170" x2="616" y2="170" style="--d:0"/>
+          <path class="d soft" pathLength="1" style="--d:1" d="M24 170 v5 M66 170 v5 M108 170 v5 M150 170 v5 M192 170 v5 M234 170 v5 M276 170 v5 M318 170 v5 M362 170 v5 M404 170 v5 M446 170 v5 M488 170 v5 M530 170 v5 M572 170 v5 M616 170 v5"/>
+          <path class="d" pathLength="1" style="--d:2" d="M24 88 L52 76 L80 92 L108 78 L136 90 L164 74 L192 88 L220 80 L248 92 L276 76 L304 86 L318 84"/>
+          <line class="dash fade" x1="24" y1="84" x2="318" y2="84"/>
+          <line class="dash fade" x1="330" y1="40" x2="330" y2="170"/>
+          <path class="d" pathLength="1" style="--d:3" d="M342 126 L370 120 L398 128 L426 118 L454 126 L482 120 L510 126 L538 118 L566 124 L594 120 L616 124"/>
+          <line class="d amber" pathLength="1" x1="342" y1="122" x2="616" y2="122" style="--d:4"/>
+          <path class="d soft" pathLength="1" d="M624 84 h8 M632 84 v38 M624 122 h8" style="--d:5"/>
+          <text class="lbl" x="318" y="30" text-anchor="middle">install</text>
+          <text class="lbl" x="24" y="64">your normal week, metered</text>
+          <text class="lbl lbl--ink" x="616" y="106" text-anchor="end">the difference, proven</text>
+          <text class="lbl" x="171" y="194" text-anchor="middle">7 days &middot; before</text>
+          <text class="lbl" x="479" y="194" text-anchor="middle">7 days &middot; after</text>
+          <text class="lbl soft-t" x="320" y="216" text-anchor="middle">per unit &middot; witnessed by anyone you choose</text>
+        </svg>
+        <figcaption>Fig. 02 &middot; The Exam's proof window</figcaption>
+      </figure>
+      <div class="floor">
+        <h3>The Floor</h3>
+        <p>If we can't prove the savings, nothing is installed and you owe nothing.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+      </div>
+      <div class="cta" data-cta>
+        <button type="button" class="btn btn--lg js-sms-toggle" aria-expanded="false">Text Ron</button>
+      </div>
+      <div class="sms" role="group" aria-label="Text Ron">
+        <p class="sms__to">To Ron &middot; (561) 410-4253</p>
+        <textarea rows="4" spellcheck="false" aria-label="Message to Ron">Hey Ron, I run a commercial building and I'd like to see what real energy savings could look like at my property, without the sales song and dance. What does it take to qualify?</textarea>
+        <div class="sms__foot">
+          <span class="sms__hint sms__hint--mobile">Opens in your messages, ready to send.</span>
+          <a class="btn btn--sm js-sms-send sms__send" href="#" data-phone="+15614104253">Send message</a> <a class="sms__email" href="mailto:ron@cpl.vision?subject=Energy%20savings%20at%20my%20building&body=Hey%20Ron%2C%20I%20run%20a%20commercial%20building%20and%20I%27d%20like%20to%20see%20what%20real%20energy%20savings%20could%20look%20like%20at%20my%20property%2C%20without%20the%20sales%20song%20and%20dance.%20What%20does%20it%20take%20to%20qualify%3F">Email Ron instead</a>
+          <div class="sms__qr"><img src="assets/img/qr-text-ron.svg" alt="Scan to text Ron" width="150" height="150"><p class="sms__qr-cap">On a computer? Scan this with your phone &mdash; Ron&rsquo;s number and message fill in automatically.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 4 · WHERE THE MONEY IS (dark) -->
+  <section class="beat beat--dark" id="money" aria-labelledby="money-h">
+    <div class="wrap beat__narrow">
+      <h2 id="money-h">Heating and cooling can be half your bill. We start there.</h2>
+      <p class="lead lead--dark">Half a bill deserves a whole prescription. <strong>The Exam matches the fix to the equipment you actually run:</strong> what's right for a simple on/off compressor is wrong for an inverter system, and some heat should never reach your HVAC at all.</p>
+      <p class="readout">20&ndash;55%<small><strong>off the HVAC portion of your bill, combined,</strong> and we quote the floor, not the peak.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></small></p>
+      <ul class="kit" aria-label="The four phase-one systems">
+        <li>
+          <div class="kit__img"><img src="assets/img/kit-optimizer.jpg" alt="The HVAC optimizer control module, photographed on its mounting panel" loading="lazy"></div>
+          <p class="kit__fit">For simple on/off compressors &middot; the most common systems</p>
+          <h3>The HVAC optimizer</h3>
+          <p>Learns how your building runs and shuts the compressor off the moment it stops doing useful work, while the fan keeps delivering the stored cold.</p>
+          <p class="kit__fig">15&ndash;30% less HVAC energy<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+        </li>
+        <li>
+          <div class="kit__img kit__img--draw">
+            <figure class="fig fig--kit" aria-label="Cutaway drawing of a coil tube: an oil film lining the inside wall before treatment, bare metal restored after">
+              <svg viewBox="0 0 600 400" role="img" aria-hidden="true">
+                <defs>
+                  <pattern id="hatch-oil" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <circle class="d" pathLength="1" cx="160" cy="186" r="92" style="--d:0"/>
+                <circle class="d soft" pathLength="1" cx="160" cy="186" r="74" style="--d:1"/>
+                <circle class="d soft" pathLength="1" cx="160" cy="186" r="52" style="--d:1"/>
+                <path class="fade" style="--o:0.4" d="M160 112 a74 74 0 1 0 0.01 0 Z M160 134 a52 52 0 1 1 -0.01 0 Z" fill-rule="evenodd" fill="url(#hatch-oil)"/>
+                <path class="d soft" pathLength="1" style="--d:2" d="M226 120 L262 84 L296 84"/>
+                <circle class="d" pathLength="1" cx="440" cy="186" r="92" style="--d:3"/>
+                <circle class="d soft" pathLength="1" cx="440" cy="186" r="84" style="--d:4"/>
+                <path class="d" pathLength="1" style="--d:5" d="M286 186 h34 M320 186 l-9 -6 M320 186 l-9 6"/>
+                <text class="lbl" x="300" y="76" text-anchor="start">oil film &middot; baked on inside</text>
+                <text class="lbl" x="160" y="330" text-anchor="middle">before &middot; heat fights the film</text>
+                <text class="lbl" x="440" y="330" text-anchor="middle">after &middot; bare metal again</text>
+                <text class="lbl soft-t" x="300" y="374" text-anchor="middle">coil tube &middot; section view</text>
+              </svg>
+            </figure>
+          </div>
+          <p class="kit__fit">For aging units &middot; any system type</p>
+          <h3>The coil treatment</h3>
+          <p>The waste no wash can reach: compressor oil bakes onto the <em>inside</em> of the coil circuit, year after year. One refrigerant-side treatment lifts it off, for the life of the unit.</p>
+          <p class="kit__fig">Recovers up to 36% of lost performance<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup></p>
+        </li>
+        <li>
+          <div class="kit__img"><img src="assets/img/kit-solarcoil.jpg" alt="A solar coil collector installed on a commercial roof, rooftop units behind it" loading="lazy"></div>
+          <p class="kit__fit">For inverter-type systems</p>
+          <h3>The solar coil</h3>
+          <p>Not a solar panel: a solar thermal retrofit that captures the sun's heat directly and puts it to work for the compressor, changing where the energy comes from.</p>
+          <p class="kit__fig">30&ndash;50% more efficient system<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+        </li>
+        <li>
+          <div class="kit__img"><img src="assets/img/kit-barrier.png" alt="Illustrative: a commercial flat roof half-coated in a bright reflective thermal barrier" loading="lazy"></div>
+          <p class="kit__fit">For the building itself</p>
+          <h3>The thermal barrier</h3>
+          <p>Sprayed or membrane-applied where the diagnosis shows it pays, so the heat never reaches the equipment that would have fought it.</p>
+          <p class="kit__fig">Blocks up to 18 degrees before it gets in<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+        </li>
+      </ul>
+      <div class="kit__flag">
+        <div class="kit__img"><video src="assets/img/suncore-rotate.mp4" poster="assets/img/kit-suncore.jpg" muted loop playsinline preload="metadata" aria-label="The SunCore packaged unit with its two integrated solar thermal collectors, rotating slowly"></video></div>
+        <div class="kit__flag-copy">
+          <p class="kit__fit">For true end of life &middot; the flagship replacement</p>
+          <h3>The SunCore</h3>
+          <p>When a unit truly reaches end of life, this is what replaces it: a frontier-class packaged unit with solar thermal built in, dropping into the same footprint.</p>
+          <p class="kit__fig">IEER 31 &middot; COP 6 &middot; half or more off heating and cooling energy<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+        </div>
+      </div>
+      <p class="kit__more">And phase one's own metering data is what sizes the deeper fixes later, conditioning, storage, controls, refrigeration: <strong>the path past 30%, opened by your numbers, never by a brochure.</strong><sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+      <p class="quiet quiet--dark"><a href="how-it-works.html">How each fix works, in plain language &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- THE FILM · the deep weeds, told plainly -->
+  <section class="beat beat--rule" id="film" aria-labelledby="film-h">
+    <div class="wrap beat__narrow">
+      <h2 id="film-h">Watch the whole method in six minutes.</h2>
+      <p class="lead">How we find the waste, prove it on your own equipment, and install only what pays for itself. <strong>The deep weeds live here, told plainly.</strong></p>
+      <div class="film-inline">
+        <button type="button" class="film-inline__facade" data-film-inline aria-label="Play the six-minute CPL film">
+          <img src="assets/img/film-cover.jpg" alt="" loading="lazy">
+          <span class="film-inline__scrim" aria-hidden="true"></span>
+          <span class="film-inline__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          <span class="film-inline__meta" aria-hidden="true">The film &middot; 6 min</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 5 · PROOF -->
+  <section class="beat beat--rule" id="proof" aria-labelledby="proof-h">
+    <div class="wrap beat__narrow">
+      <h2 id="proof-h">Measured at 200+ named sites.</h2>
+      <p class="lead">Metered results from the technologies we install, at the sites named, under their own conditions.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 9">1, 9</a></sup> <strong>If a claim can't survive your accountant, we don't make it.</strong></p>
+      <div class="ledger" id="ledger" aria-hidden="true">
+        <div class="ledger__col" style="--dur: 210s"></div>
+        <div class="ledger__col" style="--dur: 260s"></div>
+        <div class="ledger__col" style="--dur: 180s"></div>
+      </div>
+      <p class="quiet">The ledger above is a live sample; hover to hold it still, click any entry for its context. <button type="button" class="textlink" id="record-open" aria-haspopup="dialog">Read the full record: 95 documented examples</button></p>
+    </div>
+  </section>
+
+  <!-- BEAT 6 · THE CHAIN -->
+  <section class="beat beat--rule" id="chain" aria-labelledby="chain-h">
+    <div class="wrap beat__narrow">
+      <h2 id="chain-h">One page for everyone who has to say yes.</h2>
+      <p class="lead">A manager finds us, an owner signs, a reviewer checks the math. <strong>This page is written to be forwarded.</strong></p>
+      <details class="gate">
+        <summary><span class="plus" aria-hidden="true">+</span>If you run the building</summary>
+        <div class="gate__body">
+          <p>Nothing breaks and nothing changes hands. The work happens on the units you already run, typically an afternoon each, with comfort held or improved.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup> Your incumbent HVAC contractor stays your contractor: we prefer to certify and work through them, not around them. Less compressor runtime and cleaner coils mean fewer breakdowns and fewer hot-room calls.</p>
+        </div>
+      </details>
+      <details class="gate">
+        <summary><span class="plus" aria-hidden="true">+</span>If you own the P&amp;L</summary>
+        <div class="gate__body">
+          <p>Every fix must clear a roughly two-year payback bar, or run cash-flow positive from day one, on your own numbers.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 2">1, 2</a></sup> If we can't prove the savings, nothing is installed and you owe nothing. Every rebate, credit, and deduction your project qualifies for is found and filed for you.<sup class="fn"><a href="#notes" aria-label="See notes 3 and 4">3, 4</a></sup></p>
+        </div>
+      </details>
+      <details class="gate">
+        <summary><span class="plus" aria-hidden="true">+</span>If you answer for ESG or risk</summary>
+        <div class="gate__body">
+          <p>Seven days of metering before and after, per unit, witnessed by any third party you choose. Recognized protocols on request: IPMVP Option C, ASHRAE Guideline 14.<sup class="fn"><a href="#notes" aria-label="See note 8">8</a></sup> The result is verified kWh you can carry straight into energy and emissions reporting, not a marketing claim.</p>
+        </div>
+      </details>
+      <p class="quiet">Forward this page to the person whose yes you need next, or <a href="energy-plus-one-pager.pdf" download>download the one-page version (PDF)</a> to put on their desk. It was written for them too.</p>
+    </div>
+  </section>
+
+  <!-- BEAT 7 · YOUR NUMBER -->
+  <section class="beat beat--rule" id="calculator" aria-labelledby="calc-h">
+    <div class="wrap beat__narrow">
+      <h2 id="calc-h">Run your own number.</h2>
+      <p class="lead">Two minutes, conservative by design. <strong>A model, not a quote; the exam confirms the real figure.</strong><sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup></p>
+      <div class="calc" data-calc>
+        <p class="calc__loading" aria-hidden="true">Loading the estimator&hellip;</p>
+        <iframe id="calc-frame" src="https://slashyourenergycost.com/cpl-hvac-calculator/?v=2026-08-14" title="Energy savings estimator" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAT 8 · STAKES -->
+  <section class="beat beat--rule" id="stakes" aria-labelledby="stakes-h">
+    <div class="wrap beat__narrow">
+      <h2 id="stakes-h">Waiting isn't neutral.</h2>
+      <p class="lead">The same waste that pads the bill runs through your equipment and wears it out years early. <strong>Replacing an aged-out RTU fleet runs $260K to $480K per property.</strong><sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup> None of that appears on any bill until the day it all does.</p>
+      <figure class="plate">
+        <div class="plate__frame"><img src="assets/img/stakes-roof.jpg" alt="Illustrative: overhead survey view of an aging commercial roof, oil and rust streaks running from each of its package HVAC units" loading="lazy"></div>
+        <figcaption>Survey plate 1 &middot; An aging fleet, streaking oil &middot; The equipment doing the paying &middot; illustrative</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- BEAT 9 · SUCCESS -->
+  <section class="beat beat--rule" id="success" aria-labelledby="success-h">
+    <div class="wrap beat__narrow">
+      <h2 id="success-h">What it looks like when the number is real.</h2>
+      <p class="lead">A lower bill, proven on your own meter and holding month after month.<sup class="fn"><a href="#notes" aria-label="See note 1">1</a></sup> Equipment that outlives its replacement schedule instead of dying early.<sup class="fn"><a href="#notes" aria-label="See note 12">12</a></sup> And the part people remember: <strong>walking into the next budget meeting with a number nobody can argue with.</strong></p>
+    </div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="close" aria-labelledby="close-h">
+    <div class="close__media" aria-hidden="true">
+      <img src="assets/img/close-dusk.jpg" alt="" loading="lazy">
+      <div class="hero__scrim"></div>
+    </div>
+    <div class="wrap close__in">
+      <h2 id="close-h">Find out what your building is wasting.</h2>
+      <p class="hero__lede">Fifteen minutes tells you whether your building qualifies. The diagnosis is on us.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+      <div class="cta" data-cta>
+        <button type="button" class="btn btn--lg js-sms-toggle" aria-expanded="false">Text Ron</button>
+      </div>
+      <div class="sms" role="group" aria-label="Text Ron">
+        <p class="sms__to">To Ron &middot; (561) 410-4253</p>
+        <textarea rows="4" spellcheck="false" aria-label="Message to Ron">Hey Ron, I run a commercial building and I'd like to see what real energy savings could look like at my property, without the sales song and dance. What does it take to qualify?</textarea>
+        <div class="sms__foot">
+          <span class="sms__hint sms__hint--mobile">Opens in your messages, ready to send.</span>
+          <a class="btn btn--sm js-sms-send sms__send" href="#" data-phone="+15614104253">Send message</a> <a class="sms__email" href="mailto:ron@cpl.vision?subject=Energy%20savings%20at%20my%20building&body=Hey%20Ron%2C%20I%20run%20a%20commercial%20building%20and%20I%27d%20like%20to%20see%20what%20real%20energy%20savings%20could%20look%20like%20at%20my%20property%2C%20without%20the%20sales%20song%20and%20dance.%20What%20does%20it%20take%20to%20qualify%3F">Email Ron instead</a>
+          <div class="sms__qr"><img src="assets/img/qr-text-ron.svg" alt="Scan to text Ron" width="150" height="150"><p class="sms__qr-cap">On a computer? Scan this with your phone &mdash; Ron&rsquo;s number and message fill in automatically.</p></div>
+        </div>
+      </div>
+      <div class="team-block">
+        <p class="team-block__label">The team</p>
+        <div class="team">
+          <div class="person"><img src="assets/img/ron-hansen.png" alt="Ron Hansen" loading="lazy"><div><h3>Ron Hansen</h3><p class="person__role">CEO &middot; CPL</p><p>Ron pairs a passion for empowering people with a track record of high-impact execution, turning bold ideas into thriving realities through visionary leadership, clear communication, and strategic relationship-building.</p></div></div>
+          <div class="person"><img src="assets/img/jonathan-grinko.png" alt="Jonathan Grinko" loading="lazy"><div><h3>Jonathan Grinko</h3><p class="person__role">Director of Systems &amp; Business Development</p><p>Jonathan builds the internal systems behind sales, operations, and client delivery, including CRM workflows, automation, and documentation. His focus is simple: repeatable processes that protect quality, improve follow-through, and make growth sustainable.</p></div></div>
+          <div class="person"><img src="assets/img/daniel.jpeg" alt="Daniel Gutierrez" loading="lazy"><div><h3>Daniel Gutierrez</h3><p class="person__role">Founder, Energy Plus</p><p>19 years connecting people, capital, and opportunity across 14+ industries. Former director of FDA-registered clinical trials. Works fee-for-performance.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="assets/img/cpl-logo-ink.png" alt="CPL &middot; Christ Power &amp; Light" width="84" height="36">
+    <p class="foot__tagline">Independent energy partner to commercial buildings. We diagnose the property first, then prove the savings on it.</p>
+
+    <div class="foot__notes" id="notes">
+      <p><strong>How to read this page.</strong> CPL is an independent energy solutions partner. We do not manufacture equipment. We diagnose each property and procure, size, and integrate the right technologies from our stack for that specific building. The numbered notes below apply to the marked figures and statements throughout this page.</p>
+      <ul>
+        <li><span class="n">1</span><span><strong>Savings and performance figures.</strong> All savings, bill-reduction, equipment-life, maintenance, and payback figures shown (including the heating-and-cooling savings ranges such as 20 to 55% of the HVAC portion of a bill) are illustrative estimates or results achieved at specific facilities under their own conditions. They are not predictions or guarantees of your results. Your actual results depend on your building, climate, occupancy, equipment condition, and utility rates, which is exactly why we prove your savings on site before you commit. Modeled numbers are directional estimates, not quotes.</span></li>
+        <li><span class="n">2</span><span><strong>Program terms and eligibility.</strong> Our done-for-you program, including negotiation, pricing, and contract terms, is offered case-by-case and depends on factors such as the number of facilities in your portfolio and the size of your electricity bills. Properties that do not qualify for the done-for-you program may instead be offered self-directed options, which carry different terms, pricing, and responsibilities. "No cost," "the diagnosis is on us," and "nothing owed" describe the diagnosis and pilot phase for qualifying properties; they do not describe the cost of any installed solution. Eligibility, scheduling, and availability are determined during the application and diagnosis process.</span></li>
+        <li><span class="n">3</span><span><strong>Tax incentives.</strong> Any tax figures shown are potential amounts based on current federal rules and assumptions; they are not tax advice. Actual deductions depend on your building, the work performed, and your tax situation. Consult a qualified tax advisor.</span></li>
+        <li><span class="n">4</span><span><strong>Utility and incentive programs.</strong> Utility-program coverage varies by state, utility, and program, and is subject to program availability, funding, and qualification. Amounts shown are illustrative and are not guaranteed.</span></li>
+        <li><span class="n">5</span><span><strong>Professional history and credentials.</strong> Biographical and credential statements reflect documented professional history. Supporting documentation is available for verification on request.</span></li>
+        <li><span class="n">8</span><span><strong>Measurement and verification.</strong> Independent measurement and verification of results, including under recognized protocols such as IPMVP Option C and ASHRAE Guideline 14, is available upon request on qualifying projects. Where performed, verification confirms measured results for that specific project only.</span></li>
+        <li><span class="n">9</span><span><strong>Third-party evaluations and named organizations.</strong> References to NASA, named utilities, and other organizations reflect publicly available reports and evaluations concerning the underlying technologies that CPL deploys. They do not refer to CPL itself, and do not constitute or imply endorsement, sponsorship, certification, or affiliation.</span></li>
+        <li><span class="n">12</span><span><strong>Equipment life and maintenance.</strong> Statements regarding extended equipment life, reduced maintenance, improved humidity control, and single-application or long-lasting benefits assume proper installation, operation, and maintenance. They are not a warranty, and actual outcomes will vary.</span></li>
+      </ul>
+    </div>
+
+    <details class="disclosures" id="disclosures-terms">
+      <summary>Important Disclosures and Terms <span class="plus" aria-hidden="true">+</span></summary>
+      <div class="disclosures__body">
+        <p><em>Effective date: February 4, 2026.</em> These disclosures apply to CPL marketing and informational materials, including videos, presentations, web pages, and printed materials. They explain the basis for the statements, figures, and offers presented in those materials. By viewing or relying on those materials, you acknowledge these disclosures. Where a signed agreement exists, that agreement governs.</p>
+        <h4>1. General</h4>
+        <p>This content is provided for general informational purposes only. It is not an offer, warranty, guarantee, or professional advice. All figures are estimates, are illustrative, and are subject to change without notice. The only binding commitments between you and CPL are those set out in a signed written agreement. Results vary by facility.</p>
+        <h4>2. Performance figures</h4>
+        <p>Stated efficiency and savings ranges, including but not limited to 15 to 30 percent, 30 to 50 percent, 20 to 55 percent of the heating-and-cooling portion of a bill, up to 36 percent, an IEER of 31, a COP of 6, and more than 10 degrees, reflect results observed under specific conditions or reported in specific studies. Where a range is quoted for combined measures, the low end reflects the outcomes we treat as the planning floor and the high end requires per-site modeling. Actual performance depends on factors including equipment type, equipment age, baseline efficiency, climate, occupancy, usage patterns, maintenance, and installation quality. Your actual results may differ from, and may fall below, the ranges shown.</p>
+        <h4>3. System and technical statements</h4>
+        <p>Descriptions of how heating and cooling systems operate, including any statement that the compressor accounts for a majority or a stated share of system energy use, are typical or representative rather than universal. Actual values vary by system design, configuration, and operation.</p>
+        <h4>4. Savings and return on investment</h4>
+        <p>Any savings, payback period, or return on investment figure is an estimate based on assumptions that may not reflect the conditions at your facility. It is not a guarantee of any specific financial outcome. Modeled results and prior results do not predict future performance.</p>
+        <h4>5. Cash flow and program cost</h4>
+        <p>Statements that a project can be cash-flow positive from day one, or that incentives can cover a significant share of a program, describe outcomes that are achievable only under certain financing structures, utility rates, program eligibility, and tax positions. These outcomes are not available in all cases and are not promised for any particular customer.</p>
+        <h4>6. Tax credits, deductions, and rebates</h4>
+        <p>The availability, amounts, and eligibility requirements of tax deductions, tax credits, and utility rebates depend on jurisdiction, current law, program funding, and your individual tax situation. Programs change and may end without notice. CPL does not provide tax, accounting, or legal advice and does not guarantee that any incentive will be approved or received. Consult your own qualified advisor regarding your specific circumstances.</p>
+        <h4>7. Measurement and verification</h4>
+        <p>Independent measurement and verification of results, including under recognized protocols such as the International Performance Measurement and Verification Protocol (IPMVP) Option C and ASHRAE Guideline 14, is available upon request on qualifying projects. Where performed, verification confirms measured results for that specific project only and does not guarantee future results or results at any other site.</p>
+        <h4>8. Third-party evaluations and named organizations</h4>
+        <p>References to NASA, Durham College, named utilities, and other organizations reflect publicly available reports and evaluations concerning the underlying technologies that CPL deploys. They do not refer to CPL itself. Such references are provided for identification and descriptive purposes only and do not constitute or imply endorsement, sponsorship, certification, or affiliation by those organizations with CPL, unless expressly stated in writing.</p>
+        <h4>9. Case studies and references</h4>
+        <p>Case studies, study counts, and climate or geographic references reflect specific installations completed under specific conditions. They are illustrative and are not predictive of the results you will achieve at your facility.</p>
+        <h4>10. Third-party products and trademarks</h4>
+        <p>Certain technologies referenced are manufactured or supplied by third parties. All product names, logos, and trademarks are the property of their respective owners. Specifications are subject to change without notice.</p>
+        <h4>11. Equipment life and maintenance</h4>
+        <p>Statements regarding extended equipment life, reduced maintenance, improved humidity control, and single-application or long-lasting benefits assume proper installation, operation, and maintenance. They are not a warranty, and actual outcomes will vary. Warranty terms, if any, are provided separately in writing.</p>
+        <h4>12. Forward-looking statements</h4>
+        <p>Statements about future benefits, savings, performance, and outcomes are forward-looking and inherently uncertain. Actual results may differ materially from those expressed or implied.</p>
+        <h4>13. Not professional advice; assessment required</h4>
+        <p>The information presented is general and educational in nature. It is not engineering, financial, tax, or legal advice for your specific situation. A formal assessment of your facility is required before any specific recommendation, scope, or projected result can be provided.</p>
+        <h4>14. Analogies</h4>
+        <p>References to diagnosis, examinations, prescriptions, or disease are analogies used to describe the energy assessment process. They are not medical statements and are not intended to convey any medical meaning.</p>
+        <p><strong>Questions.</strong> For questions about these disclosures or any statement in our materials, contact CPL at <a href="mailto:ron@cpl.vision">ron@cpl.vision</a> or <a href="tel:+15614104253">(561) 410-4253</a>.</p>
+      </div>
+    </details>
+
+    <div class="foot__meta">
+      <span>&copy; 2026 CPL</span>
+      <span>Independent Energy Solutions Partner</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="sheet" id="record-sheet" aria-labelledby="record-title">
+  <div class="sheet__bar">
+    <h2 id="record-title">The full record</h2>
+    <button type="button" class="sheet__close" id="record-close" aria-label="Close the full record">&times;</button>
+  </div>
+  <div class="sheet__body" id="record-body">
+    <noscript><p>The full record requires JavaScript. The four results above are representative; documentation for all 95 is available on request.</p></noscript>
+  </div>
+  <p class="sheet__note">Every result was measured at the named site under its own conditions; it is not a prediction for your building. Regional programs aggregate hundreds of additional sites into the 200-plus total.<sup class="fn"><a href="#notes">1, 9</a></sup></p>
+</dialog>
+
+<script src="assets/site.js" defer></script>
+<script>
+/* CPL page-local: SMS reveal -> a real modal popover, PORTALED to <body> so no
+   ancestor stacking context can trap it beneath the backdrop. The shared site.js
+   still toggles .is-open and builds the sms: href; this moves the open panel to
+   <body>, adds a dimmed backdrop + close button, and restores the panel to its
+   original spot on close so it always reopens. A capture-phase listener records
+   whether a panel was already open BEFORE the shared toggle fires, so a second
+   click reliably closes. */
+(function(){
+  var homes = new WeakMap();
+  var bd = document.createElement('div');
+  bd.className = 'sms-backdrop'; bd.hidden = true;
+  document.body.appendChild(bd);
+
+  function openPanels(){ return Array.prototype.slice.call(document.querySelectorAll('.sms.is-open')); }
+  function portalOut(p){
+    if(!homes.has(p)) homes.set(p, { parent: p.parentNode, next: p.nextSibling });
+    if(p.parentNode !== document.body) document.body.appendChild(p);
+  }
+  function portalHome(p){
+    var h = homes.get(p);
+    if(h && h.parent) h.parent.insertBefore(p, h.next);
+  }
+  function closeAll(){
+    openPanels().forEach(function(p){ p.classList.remove('is-open'); portalHome(p); });
+    document.querySelectorAll('.js-sms-toggle[aria-expanded="true"]').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+    bd.hidden = true;
+  }
+  bd.addEventListener('click', closeAll);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+
+  var wasOpen = false;
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.js-sms-toggle')) wasOpen = openPanels().length > 0;
+  }, true); // capture: read state BEFORE the shared toggle handler runs
+
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.js-sms-toggle')) return;
+    setTimeout(function(){
+      if(wasOpen){ closeAll(); return; }          // a panel was open -> this click closes it
+      var p = openPanels()[0];                     // the shared handler just opened one
+      if(!p){ bd.hidden = true; return; }
+      openPanels().slice(1).forEach(function(x){ x.classList.remove('is-open'); portalHome(x); }); // single-open
+      portalOut(p);
+      if(!p.querySelector('.sms__close')){
+        var x = document.createElement('button');
+        x.type='button'; x.className='sms__close'; x.setAttribute('aria-label','Close'); x.innerHTML='&times;';
+        x.addEventListener('click', closeAll);
+        p.appendChild(x);
+      }
+      bd.hidden = false;
+      var ta = p.querySelector('textarea'); if(ta) ta.focus();
+    }, 0);
+  });
+
+  /* "Email Ron" also copies Ron's address to the clipboard with a visible
+     confirmation, so it does something even when the desktop has no default mail
+     app. The mailto href is left intact, so anyone WITH a mail client still gets
+     a pre-filled compose window as well. */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('.sms__email');
+    if(!a) return;
+    try {
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText('ron@cpl.vision');
+        if(!a.dataset.origLabel) a.dataset.origLabel = a.textContent;
+        a.textContent = 'Copied ron@cpl.vision ✓';
+        setTimeout(function(){ if(a.dataset.origLabel) a.textContent = a.dataset.origLabel; }, 2200);
+      }
+    } catch(err){}
+  });
+})();
+</script>
+</body>
+</html>
