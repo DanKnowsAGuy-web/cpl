@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#191a1c"/>
+      <stop offset="1" stop-color="#232427"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2b2e"/>
+      <stop offset="1" stop-color="#1a1b1d"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.42" r="0.85">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0.55"/>
+    </radialGradient>
+    <linearGradient id="spot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="660" fill="url(#wall)"/>
+  <rect y="660" width="1600" height="240" fill="url(#floor)"/>
+  <line x1="0" y1="660" x2="1600" y2="660" stroke="#0e0f10" stroke-width="2"/>
+
+  <!-- track lighting -->
+  <line x1="60" y1="46" x2="1540" y2="46" stroke="#0e0f10" stroke-width="6"/>
+  <g fill="#3a3b3e">
+    <circle cx="190" cy="52" r="9"/><circle cx="570" cy="52" r="9"/>
+    <circle cx="960" cy="52" r="9"/><circle cx="1345" cy="52" r="9"/>
+  </g>
+
+  <!-- spotlight cones -->
+  <path d="M190 58 L100 640 L300 640 Z" fill="url(#spot)"/>
+  <path d="M570 58 L440 640 L720 640 Z" fill="url(#spot)"/>
+  <path d="M960 58 L860 640 L1090 640 Z" fill="url(#spot)"/>
+  <path d="M1345 58 L1200 640 L1510 640 Z" fill="url(#spot)"/>
+
+  <!-- artwork 1 · amber field -->
+  <g>
+    <rect x="106" y="256" width="188" height="248" fill="#101113"/>
+    <rect x="120" y="270" width="160" height="220" fill="#20211f"/>
+    <rect x="120" y="270" width="160" height="140" fill="#c08a44"/>
+    <rect x="120" y="410" width="160" height="80" fill="#6e5330"/>
+    <rect x="106" y="256" width="188" height="248" fill="none" stroke="#4c4d50" stroke-width="6"/>
+  </g>
+
+  <!-- artwork 2 · teal horizon -->
+  <g>
+    <rect x="428" y="216" width="292" height="332" fill="#101113"/>
+    <rect x="446" y="234" width="256" height="296" fill="#355a61"/>
+    <rect x="446" y="234" width="256" height="150" fill="#527f88"/>
+    <rect x="446" y="384" width="256" height="8" fill="#c9c1a8"/>
+    <rect x="428" y="216" width="292" height="332" fill="none" stroke="#4c4d50" stroke-width="6"/>
+  </g>
+
+  <!-- artwork 3 · rose composition -->
+  <g>
+    <rect x="856" y="252" width="212" height="272" fill="#101113"/>
+    <rect x="872" y="268" width="180" height="240" fill="#8d4a3c"/>
+    <circle cx="962" cy="368" r="58" fill="#b06a52"/>
+    <rect x="872" y="452" width="180" height="56" fill="#54312a"/>
+    <rect x="856" y="252" width="212" height="272" fill="none" stroke="#4c4d50" stroke-width="6"/>
+  </g>
+
+  <!-- artwork 4 · gold and green -->
+  <g>
+    <rect x="1192" y="208" width="304" height="352" fill="#101113"/>
+    <rect x="1208" y="224" width="272" height="320" fill="#4c5238"/>
+    <rect x="1208" y="224" width="130" height="320" fill="#a8893c"/>
+    <rect x="1370" y="300" width="110" height="160" fill="#68703f"/>
+    <rect x="1192" y="208" width="304" height="352" fill="none" stroke="#4c4d50" stroke-width="6"/>
+  </g>
+
+  <!-- floor reflections -->
+  <g opacity="0.06">
+    <rect x="120" y="668" width="160" height="120" fill="#c08a44"/>
+    <rect x="446" y="668" width="256" height="150" fill="#527f88"/>
+    <rect x="872" y="668" width="180" height="120" fill="#b06a52"/>
+    <rect x="1208" y="668" width="272" height="160" fill="#a8893c"/>
+  </g>
+
+  <!-- bench -->
+  <g>
+    <rect x="700" y="712" width="250" height="16" rx="3" fill="#4a3f31"/>
+    <rect x="716" y="728" width="12" height="42" fill="#332c22"/>
+    <rect x="922" y="728" width="12" height="42" fill="#332c22"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>
