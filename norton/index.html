@@ -175,240 +175,8 @@
 
   <section class="beat beat--rule" id="distort" aria-labelledby="distort-h">
     <div class="wrap beat__narrow">
-      <h2 id="distort-h">Distortion costs more, wears more, and ends machines early.</h2>
-      <p class="lead">Machines in this museum do not draw power smoothly. That roughness is distortion. Cleaning it cuts waste, cuts maintenance up to 40%, and lets equipment live out its full life.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup></p>
-      <div class="tri" role="list">
-        <article role="listitem">
-          <p class="tri__kicker">The bill</p>
-          <h3>You pay for heat that never cools a gallery.</h3>
-          <p>Distortion turns paid power into waste heat. That heat also fattens the peak.</p>
-        </article>
-        <article role="listitem">
-          <p class="tri__kicker">Maintenance</p>
-          <h3>Up to 40% of the service bill.</h3>
-          <p>Distortion is a key driver of those calls. Cleaning the power cuts them.</p>
-        </article>
-        <article role="listitem">
-          <p class="tri__kicker">Equipment life</p>
-          <h3>Heat retires machines early.</h3>
-          <p>Clean power gives them their full life: five to fifteen years more, in measured cases.</p>
-        </article>
-      </div>
-
-      <p class="analog__lede">When air bubbles enter the pipe, the meter still counts the flow. You pay for air, not water. Distortion works the same way.</p>
-      <figure class="analog" aria-label="Treated power on the left, an air handler in the middle, distorted power on the right. The meter reads 100 kilowatt-hours on the left and 115 on the right.">
-        <div class="analog__board">
-          <div class="analog__head">
-            <p class="analog__cap">Treated</p>
-            <p class="analog__cap analog__cap--mid" aria-hidden="true"></p>
-            <p class="analog__cap analog__cap--hot">Distorted</p>
-          </div>
-          <svg class="analog__svg" viewBox="0 0 720 220" aria-hidden="true">
-            <rect class="a-wash a-wash--mid" x="225" y="0" width="270" height="220"/>
-            <rect class="a-wash a-wash--hot" x="495" y="0" width="225" height="220"/>
-            <line class="a-rule" x1="225" y1="0" x2="225" y2="220"/>
-            <line class="a-rule" x1="495" y1="0" x2="495" y2="220"/>
-
-            <rect class="a-pipe" x="28" y="18" width="170" height="40" rx="20"/>
-            <line class="a-flow" x1="48" y1="38" x2="178" y2="38"/>
-            <polyline class="a-flow" points="166,30 180,38 166,46"/>
-
-            <rect class="a-pipe" x="522" y="18" width="170" height="40" rx="20"/>
-            <line class="a-flow a-flow--faint" x1="542" y1="38" x2="672" y2="38"/>
-            <polyline class="a-flow a-flow--faint" points="660,30 674,38 660,46"/>
-            <circle class="a-blob b0" cx="548" cy="30" r="5.5"/>
-            <circle class="a-blob b1" cx="572" cy="46" r="4"/>
-            <circle class="a-blob b2" cx="598" cy="32" r="6.5"/>
-            <circle class="a-blob b3" cx="628" cy="44" r="3.5"/>
-            <circle class="a-blob b0" cx="652" cy="29" r="5"/>
-
-            <path class="a-wave a-wave--clean" d="M28 184 C 58 154, 88 154, 118 184 S 178 214, 208 184"/>
-            <path class="a-wave a-wave--dirty" d="M522 184 C 536 154, 546 212, 560 172 S 580 148, 594 204 S 614 216, 628 160 S 648 148, 662 200 S 678 212, 692 184"/>
-
-            <line class="a-in" x1="198" y1="114" x2="286" y2="114"/>
-            <polyline class="a-in" points="276,106 288,114 276,122"/>
-
-            <path class="a-out-glow" d="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
-            <path class="a-out" d="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
-            <circle class="a-spark" r="3.2">
-              <animateMotion dur="2.4s" repeatCount="indefinite" path="M434 114 L448 96 L462 132 L476 88 L488 126 L495 114"/>
-            </circle>
-
-            <g class="a-ptac" transform="translate(360 114)">
-              <rect class="a-ptac-body" x="-74" y="-34" width="148" height="68" rx="3"/>
-              <rect class="a-ptac-vent" x="-62" y="-20" width="72" height="40"/>
-              <line class="a-ptac-slat" x1="-54" y1="-10" x2="-2" y2="-10"/>
-              <line class="a-ptac-slat" x1="-54" y1="0" x2="-2" y2="0"/>
-              <line class="a-ptac-slat" x1="-54" y1="10" x2="-2" y2="10"/>
-              <g transform="translate(44 0)">
-                <g class="a-fan">
-                  <circle r="18"/>
-                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
-                </g>
-              </g>
-              <path class="a-heat" d="M-52 -38 C-52 -52, -38 -52, -38 -38"/>
-              <path class="a-heat" d="M-28 -40 C-28 -56, -12 -56, -12 -40"/>
-              <path class="a-heat" d="M-2 -38 C-2 -52, 12 -52, 12 -38"/>
-            </g>
-          </svg>
-          <div class="analog__foot">
-            <div class="analog__meter">
-              <p class="analog__kwh">100 kWh</p>
-            </div>
-            <div class="analog__meter analog__meter--mid" aria-hidden="true"></div>
-            <div class="analog__meter analog__meter--hot">
-              <p class="analog__kwh">115 kWh</p>
-            </div>
-          </div>
-        </div>
-        <figcaption>Fig. 02<sup class="fn"><a href="#notes" aria-label="See notes 1 and 16">1, 16</a></sup></figcaption>
-      </figure>
-
-      <p class="hurt__kicker">The three that take it first</p>
-      <ul class="hurt">
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--pump" viewBox="0 0 220 150">
-              <rect class="d" x="48" y="58" width="58" height="42" rx="3"/>
-              <circle class="d" cx="138" cy="80" r="28"/>
-              <g transform="translate(138 80)">
-                <g class="imp">
-                  <path d="M0 0 L0 -18 A18 18 0 0 1 16 -8 Z M0 0 L16 8 A18 18 0 0 1 -16 8 Z M0 0 L-16 -8 A18 18 0 0 1 0 -18 Z"/>
-                </g>
-              </g>
-              <path class="d soft" d="M48 70 H28 V90 H48"/>
-              <path class="d amber" d="M166 80 H196"/>
-              <path class="d soft" d="M196 80 V48 H84 V58"/>
-            </svg>
-          </div>
-          <h3>Chillers</h3>
-          <p class="hurt__cost">$150K&ndash;$500K <span>per machine</span></p>
-        </li>
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--ptac" viewBox="0 0 220 150">
-              <rect class="d" x="36" y="42" width="148" height="72" rx="3"/>
-              <rect class="d soft" x="48" y="54" width="72" height="48"/>
-              <g transform="translate(156 78)">
-                <g class="fan">
-                  <circle r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <path d="M0 -14 Q6 -4 0 0 Q-6 -4 0 -14 M0 14 Q6 4 0 0 Q-6 4 0 14 M-14 0 Q-4 6 0 0 Q-4 -6 -14 0 M14 0 Q4 6 0 0 Q4 -6 14 0"/>
-                </g>
-              </g>
-              <path class="heat" d="M58 38 C58 28, 70 28, 70 38"/>
-              <path class="heat" d="M78 36 C78 24, 92 24, 92 36"/>
-              <path class="heat" d="M100 38 C100 28, 112 28, 112 38"/>
-            </svg>
-          </div>
-          <h3>Air handlers</h3>
-          <p class="hurt__cost">$15K&ndash;$60K <span>per unit</span></p>
-        </li>
-        <li>
-          <div class="hurt__stage" aria-hidden="true">
-            <svg class="hurt__svg hurt__svg--lift" viewBox="0 0 220 150">
-              <rect class="d" x="78" y="14" width="64" height="122" rx="2"/>
-              <line class="d soft" x1="86" y1="22" x2="86" y2="128"/>
-              <line class="d soft" x1="134" y1="22" x2="134" y2="128"/>
-              <g class="cab">
-                <rect x="92" y="28" width="36" height="32" rx="1"/>
-                <line x1="98" y1="36" x2="122" y2="36"/>
-                <line x1="98" y1="44" x2="116" y2="44"/>
-              </g>
-              <line class="d amber" x1="110" y1="14" x2="110" y2="28"/>
-            </svg>
-          </div>
-          <h3>Elevator motors</h3>
-          <p class="hurt__cost">$50K&ndash;$150K <span>per cab</span></p>
-        </li>
-      </ul>
-      <div class="also">
-        <p class="also__h">And the rest of the museum</p>
-        <ul>
-          <li>Chilled-water pumps</li>
-          <li>Dehumidifiers</li>
-          <li>Restaurant hoods</li>
-          <li>Walk-in refrigeration</li>
-          <li>Auditorium and event systems</li>
-          <li>Booster pumps</li>
-          <li>Emergency chiller rental <span>&middot; $15K&ndash;$40K a week when one dies in July, plus galleries at risk</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="beat beat--rule" id="guide" aria-labelledby="guide-h">
-    <div class="wrap beat__narrow">
-      <h2 id="guide-h">We start with a diagnosis, not a product.</h2>
-      <p class="lead">CPL started from the same frustration: savings that only ever existed in the brochure. <strong>The engineers we bring in are the ones national labs hired when a measurement had to be right the first time.</strong></p>
-    </div>
-    <div class="wrap">
-      <div class="dossier">
-        <figure class="dossier__photo">
-          <div class="plate__frame plate__frame--portrait"><img class="js-reveal" src="assets/img/cliff-lab.jpg" alt="Cliff Suljak, Chief Materials Engineer, standing in a materials testing laboratory" loading="lazy"></div>
-          <figcaption class="dossier__cap">Personnel file &middot; C. Suljak &middot; Chief Materials Engineer</figcaption>
-        </figure>
-        <div class="dossier__body">
-          <h3 class="dossier__title">Meet your diagnostician.</h3>
-          <p class="dossier__lede">When the Department of Energy and the Department of Defense needed measurements right the first time, Sandia National Laboratories didn't put the contract out to bid. <strong>They handed it to Cliff Suljak.</strong><sup class="fn"><a href="#notes" aria-label="See note 5">5</a></sup></p>
-          <ul class="creds" aria-label="Career credentials">
-            <li><span class="creds__fig">Sole source</span><span class="creds__desc">Sandia National Laboratories: directed a 22-engineer team across four DOE and DOD facilities</span></li>
-            <li><span class="creds__fig">Billions</span><span class="creds__desc">in projects overseen; the $600M Salt River Project quality program was one of them</span></li>
-            <li><span class="creds__fig">ASTM</span><span class="creds__desc">eight years co-writing the national standards other engineers are tested against</span></li>
-            <li><span class="creds__fig">3 emirates</span><span class="creds__desc">called in to assess national grid reliability for Dubai, Abu Dhabi, and Sharjah</span></li>
-          </ul>
-          <p class="dossier__why">Energy savings is a measurement problem before it is an equipment problem. <strong>He runs the measurement on this museum, on your side of the table.</strong></p>
-        </div>
-      </div>
-      <div class="workfile" data-workfile>
-        <p class="workfile__label">Selected work &middot; file <span data-wf-n>1</span> of 5 &middot; hover to hold</p>
-        <div class="workfile__view">
-          <div class="workfile__track" data-wf-track>
-            <article class="workfile__card">
-              <p class="workfile__tag">Sandia National Laboratories &middot; DOE / DOD</p>
-              <h4>Sole-source. Five years. Twenty-two engineers. Four national facilities.</h4>
-              <p>Sandia didn't put this contract out to bid. They awarded it directly to Cliff, then watched him assemble and direct a 22-person engineering team across facilities in Albuquerque, Livermore, Tonopah, and Kauai: hundreds of task orders completed under Star Wars Program infrastructure. When the DOE and DOD need structural integrity assured, they don't shop around.</p>
-            </article>
-            <article class="workfile__card">
-              <p class="workfile__tag">Salt River Project &middot; Arizona</p>
-              <h4>He built the quality control system from scratch. The industry copied it.</h4>
-              <p>As Manager of the Materials and Quality Services Division, Cliff created a complete quality control infrastructure for one of the Southwest's largest utilities: metallurgical lab, nondestructive testing, failure analysis, predictive vibration monitoring. The innovations he introduced on the $600M program were later adopted by utilities across the country.</p>
-            </article>
-            <article class="workfile__card">
-              <p class="workfile__tag">York International &middot; Los Angeles County Courts</p>
-              <h4>Northridge earthquake. County engineers on the other side. He won.</h4>
-              <p>After the Northridge earthquake threatened the world's largest thermal storage system at the LA County Courts facility, York International hired Cliff on a sole-source basis to fix it. He performed the seismic stability analysis, delivered litigation testimony against the county's own engineers and consultants, and prevailed. Then he designed, fabricated, and personally oversaw installation of the custom seismic restraint system.</p>
-            </article>
-            <article class="workfile__card">
-              <p class="workfile__tag">UAE National Power Grid &middot; Dubai &middot; Abu Dhabi &middot; Sharjah</p>
-              <h4>Three emirates. One grid. They called him in to assess all of it.</h4>
-              <p>What began as a reactive power loss engagement across Dubai, Abu Dhabi, and Sharjah grew into a full operational assessment of the UAE's power grid. Cliff mobilized in-country for extended periods, consulting directly to utility authorities on grid reliability. When a nation's infrastructure is the project, the margin for error is zero.</p>
-            </article>
-            <article class="workfile__card">
-              <p class="workfile__tag">ASTM &middot; Standards Committee &middot; 8 years</p>
-              <h4>Eight years helping write the standards everyone else is tested against.</h4>
-              <p>For eight years Cliff served on the ASTM committee developing test methods for leading-edge materials diagnostics: advanced composites and ultra-high-strength metals in extreme temperature environments. The methods he helped develop were adopted as national industry acceptance criteria for utility procurement.</p>
-            </article>
-          </div>
-          <button type="button" class="workfile__arrow workfile__arrow--prev" data-wf-prev aria-label="Previous project">&larr;</button>
-          <button type="button" class="workfile__arrow workfile__arrow--next" data-wf-next aria-label="Next project">&rarr;</button>
-        </div>
-        <div class="workfile__dots" data-wf-dots aria-label="Selected work navigation"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="beat beat--rule" id="film" aria-labelledby="film-h">
-    <div class="wrap beat__narrow">
-      <h2 id="film-h">Watch the stack. Six minutes.</h2>
-      <p class="lead">How we cut the peak, retrofit what you already have, and replace only what is done.</p>
-      <div class="film-inline">
-        <button type="button" class="film-inline__facade" data-film-inline aria-label="Play the six-minute film">
-          <img src="assets/img/film-cover.jpg" alt="" loading="lazy">
-          <span class="film-inline__scrim" aria-hidden="true"></span>
-          <span class="film-inline__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-          <span class="film-inline__meta" aria-hidden="true">The film &middot; 6 min</span>
-        </button>
-      </div>
+      <h2 id="distort-h">Rough power costs more and ends machines early.</h2>
+      <p class="lead">Machines do not draw power smoothly, and the roughness becomes heat. That heat pads the bill, drives up to 40% of service calls, and retires chillers, air handlers, and elevator motors years before their time.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 12">1, 12</a></sup> <strong>We clean the power that reaches them.</strong></p>
     </div>
   </section>
 
@@ -447,7 +215,7 @@
           <text class="lbl" x="479" y="194" text-anchor="middle">after</text>
           <text class="lbl soft-t" x="320" y="216" text-anchor="middle">per unit &middot; witnessed by anyone you choose</text>
         </svg>
-        <figcaption>Fig. 03 &middot; The Exam's proof window</figcaption>
+        <figcaption>Fig. 02 &middot; The Exam's proof window</figcaption>
       </figure>
       <div class="floor">
         <h3>The Floor</h3>
@@ -462,6 +230,47 @@
           <img class="sms__qr" src="assets/img/text-ron-qr.png" alt="Scan to open a ready-to-send text to Ron" width="140" height="140" loading="lazy">
           <p class="sms__hint">Scan the code with your phone to open a ready-to-send text. Prefer email? <a href="mailto:ron@cpl.vision?subject=Norton%20Museum%20of%20Art%20energy%20review&body=Hi%20Ron%2C%20following%20up%20on%20the%20energy%20review%20prepared%20for%20the%20Norton%20Museum%20of%20Art.%20What%20are%20next%20steps%20for%20the%20Exam%3F">ron@cpl.vision</a></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat beat--rule" id="guide" aria-labelledby="guide-h">
+    <div class="wrap beat__narrow">
+      <h2 id="guide-h">We start with a diagnosis, not a product.</h2>
+      <p class="lead">CPL started from the same frustration: savings that only ever existed in the brochure. <strong>The engineers we bring in are the ones national labs hired when a measurement had to be right the first time.</strong></p>
+    </div>
+    <div class="wrap">
+      <div class="dossier">
+        <figure class="dossier__photo">
+          <div class="plate__frame plate__frame--portrait"><img class="js-reveal" src="assets/img/cliff-lab.jpg" alt="Cliff Suljak, Chief Materials Engineer, standing in a materials testing laboratory" loading="lazy"></div>
+          <figcaption class="dossier__cap">Personnel file &middot; C. Suljak &middot; Chief Materials Engineer</figcaption>
+        </figure>
+        <div class="dossier__body">
+          <h3 class="dossier__title">Meet your diagnostician.</h3>
+          <p class="dossier__lede">When the Department of Energy and the Department of Defense needed measurements right the first time, Sandia National Laboratories didn't put the contract out to bid. <strong>They handed it to Cliff Suljak.</strong><sup class="fn"><a href="#notes" aria-label="See note 5">5</a></sup></p>
+          <ul class="creds" aria-label="Career credentials">
+            <li><span class="creds__fig">Sole source</span><span class="creds__desc">Sandia National Laboratories: directed a 22-engineer team across four DOE and DOD facilities</span></li>
+            <li><span class="creds__fig">Billions</span><span class="creds__desc">in projects overseen; the $600M Salt River Project quality program was one of them</span></li>
+            <li><span class="creds__fig">ASTM</span><span class="creds__desc">eight years co-writing the national standards other engineers are tested against</span></li>
+            <li><span class="creds__fig">3 emirates</span><span class="creds__desc">called in to assess national grid reliability for Dubai, Abu Dhabi, and Sharjah</span></li>
+          </ul>
+          <p class="dossier__why">Energy savings is a measurement problem before it is an equipment problem. <strong>He runs the measurement on this museum, on your side of the table.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="beat beat--rule" id="film" aria-labelledby="film-h">
+    <div class="wrap beat__narrow">
+      <h2 id="film-h">Watch the stack. Six minutes.</h2>
+      <p class="lead">How we cut the peak, retrofit what you already have, and replace only what is done.</p>
+      <div class="film-inline">
+        <button type="button" class="film-inline__facade" data-film-inline aria-label="Play the six-minute film">
+          <img src="assets/img/film-cover.jpg" alt="" loading="lazy">
+          <span class="film-inline__scrim" aria-hidden="true"></span>
+          <span class="film-inline__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+          <span class="film-inline__meta" aria-hidden="true">The film &middot; 6 min</span>
+        </button>
       </div>
     </div>
   </section>
@@ -574,7 +383,7 @@
       <details class="gate">
         <summary><span class="plus" aria-hidden="true">+</span>If you own the P&L</summary>
         <div class="gate__body">
-          <p>Demand comes off first. HVAC waste comes off second. Every fix must clear a roughly two-year payback bar, or run cash-flow positive from day one, on this museum&rsquo;s numbers.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 2">1, 2</a></sup> Structures exist under which the project costs nothing up front and the savings exceed the payment from the first month; we bring the options, you pick or pass.<sup class="fn"><a href="#notes" aria-label="See notes 2, 3 and 4">2, 3, 4</a></sup> If we can&rsquo;t prove the savings, nothing is installed and you owe nothing. Every rebate, credit, and deduction the project qualifies for is found and filed for you.<sup class="fn"><a href="#notes" aria-label="See notes 3 and 4">3, 4</a></sup> A dollar that stops going to the utility is a dollar back in the program budget.</p>
+          <p>Demand comes off first. HVAC waste comes off second. Every fix must clear a roughly two-year payback bar, or run cash-flow positive from day one, on this museum&rsquo;s numbers.<sup class="fn"><a href="#notes" aria-label="See notes 1 and 2">1, 2</a></sup> Structures exist under which the project costs nothing up front and the savings exceed the payment from the first month; we bring the options, you pick or pass.<sup class="fn"><a href="#notes" aria-label="See notes 2, 3 and 4">2, 3, 4</a></sup> If we can&rsquo;t prove the savings, nothing is installed and you owe nothing. Every rebate, credit, and deduction the project qualifies for is found and filed for you.<sup class="fn"><a href="#notes" aria-label="See notes 3 and 4">3, 4</a></sup></p>
         </div>
       </details>
       <details class="gate">
@@ -590,7 +399,7 @@
   <section class="close" aria-labelledby="close-h">
     <div class="wrap close__in">
       <h2 id="close-h">Take the peak off 1450 South Dixie Highway.</h2>
-      <p class="hero__lede">Fifteen minutes tells you whether the museum qualifies. The diagnosis is on us.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
+      <p class="hero__lede">Every month waited keeps the peak on the bill, and every dollar that stops going to the utility goes back to the mission. Fifteen minutes tells you whether the museum qualifies. The diagnosis is on us.<sup class="fn"><a href="#notes" aria-label="See note 2">2</a></sup></p>
       <div class="cta" data-cta>
         <button type="button" class="btn btn--lg" data-book>Text Ron directly</button>
       </div>
@@ -630,7 +439,6 @@
         <li><span class="n">9</span><span><strong>Third-party evaluations and named organizations.</strong> References to NASA, named utilities, named hotels and resorts, and other organizations reflect publicly available reports and evaluations concerning the underlying technologies that Energy Plus deploys. They do not refer to Energy Plus or CPL, and do not constitute or imply endorsement, sponsorship, certification, or affiliation. They are not claims about the Norton Museum of Art.</span></li>
         <li><span class="n">12</span><span><strong>Equipment life, maintenance, and gallery conditions.</strong> Statements regarding extended equipment life, reduced maintenance, humidity control, temperature stability, gallery conditions, visitor comfort, and single-application or long-lasting benefits assume proper installation, operation, and maintenance. They are not a warranty, and actual outcomes will vary. Nothing here replaces the museum's own environmental monitoring, conservation standards, life-safety systems, or regulatory obligations.</span></li>
         <li><span class="n">15</span><span><strong>Peak demand as a share of the bill, and the climate shorthand.</strong> The ~30% figure on this page is an industry-typical range for commercial buildings billed on demand schedules: demand charges are often 30 to 50% of a commercial electric bill. It is not a reading of the Norton Museum of Art's bills. The Exam confirms this address's actual rate schedule and share from 12 months of interval data. FPL measures demand as the highest 30-minute interval in the billing period; 1450 South Dixie Highway, West Palm Beach, sits in FPL territory and a facility of this kind is billed on a commercial demand schedule. No dollar total, billed-kW figure, or monthly spend on this page is taken from the museum's FPL account. "About 70 degrees and 50 percent humidity" describes gallery-standard environmental setpoints; the museum's actual setpoints are its own, set by its own conservation standards, and nothing described on this page changes them. The Norton Museum of Art and related marks are the property of their owners.</span></li>
-        <li><span class="n">16</span><span><strong>Museum equipment costs.</strong> Replacement ranges for chillers, air handlers, and elevator cabs, and emergency chiller rental ranges, are industry-typical figures used in the Energy Plus estimator. They are not quotes for the Norton Museum of Art and are not taken from the museum's vendor contracts. The equipment classes shown are those a facility of this kind typically runs; the Exam confirms the actual inventory. Actual cost depends on the unit, the building, and the market at the time of replacement. The 100 kWh / 115 kWh pair in Fig. 02 is an illustration of the estimator's floor: about 14 to 15 percent extra on the meter from distortion. It is not a reading of the museum's bills.</span></li>
       </ul>
     </div>
 
