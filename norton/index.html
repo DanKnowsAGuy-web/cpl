@@ -31,7 +31,7 @@
 </div>
 <script>
 (function(){
-  var HASH="f1e978b9b267e4445a3f01b80e1d2cb3d3d9a0cd044577c943aa9bd6718d7a05";
+  var HASHES=["f1e978b9b267e4445a3f01b80e1d2cb3d3d9a0cd044577c943aa9bd6718d7a05","d3cec99112255db9bf4963f7798562b6a36f1bd0b2016918629e007d474deb70"];
   var gate=document.getElementById("gate");
   function unlock(){ gate.parentNode.removeChild(gate); document.documentElement.style.overflow=""; }
   document.documentElement.style.overflow="hidden";
@@ -42,7 +42,7 @@
     var data=new TextEncoder().encode(v);
     crypto.subtle.digest("SHA-256",data).then(function(buf){
       var hex=Array.prototype.map.call(new Uint8Array(buf),function(b){return b.toString(16).padStart(2,"0");}).join("");
-      if(hex===HASH){ try{sessionStorage.setItem("norton_ok","1");}catch(e){} unlock(); }
+      if(HASHES.indexOf(hex)!==-1){ try{sessionStorage.setItem("norton_ok","1");}catch(e){} unlock(); }
       else{ document.getElementById("gate-err").style.display="block"; document.getElementById("gate-pw").select(); }
     });
   });
